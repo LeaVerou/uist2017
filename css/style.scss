@@ -11,6 +11,21 @@ $font-icons: "UIST2017 Icons", emoji;
 
 * { margin: 0; }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-heading;
+	font-weight: normal;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-weight: bold;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
 body {
 	display: flex;
 	flex-flow: column;
@@ -56,6 +71,7 @@ body > header {
 			display: block;
 			height: 1.8em;
 			margin: auto;
+			filter: drop-shadow(0 0 .1em rgba(0,0,0,.4));
 		}
 
 		time {
@@ -106,9 +122,21 @@ body > header {
 
 body > main {
 	flex: 1;
-	max-width: 60rem;
-	margin: auto;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
 	padding: 1em;
+
+	& > * {
+		width: 60rem;
+		max-width: 90vw;
+		padding: 1em 0;
+
+		& > h1 {
+			color: red;
+			font-size: 200%;
+		}
+	}
 }
 
 body > footer {
@@ -122,8 +150,6 @@ body > footer {
 	& > p {
 		min-width: 20em;
 	}
-
-
 }
 
 
@@ -168,5 +194,26 @@ body > footer {
 
 	a[title="Github"] {
 		--color: #333;
+	}
+}
+
+#welcome {
+	font-size: 125%;
+	color: rgba(0,0,0,.5);
+	font-weight: bold;
+	hyphens: auto;
+
+	h1 {
+		display: inline-block;
+		padding: .3em .5em;
+		border-radius: .3em;
+		background: red;
+		color: white;
+		font: bold 80%/1 $font-body;
+		text-transform: uppercase;
+	}
+
+	strong, a {
+		color: rgba(0,0,0,.7);
 	}
 }

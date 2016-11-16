@@ -7,6 +7,17 @@
 * {
   margin: 0; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arvo, serif;
+  font-weight: normal; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold; }
+  a:hover {
+    text-decoration: underline; }
+
 body {
   display: -ms-flexbox;
   display: flex;
@@ -47,7 +58,8 @@ body > header {
     body > header h1 img {
       display: block;
       height: 1.8em;
-      margin: auto; }
+      margin: auto;
+      filter: drop-shadow(0 0 0.1em rgba(0, 0, 0, 0.4)); }
     body > header h1 time {
       font-weight: 100;
       letter-spacing: -.04em; }
@@ -78,9 +90,20 @@ body > header {
 body > main {
   -ms-flex: 1;
   flex: 1;
-  max-width: 60rem;
-  margin: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 1em; }
+  body > main > * {
+    width: 60rem;
+    max-width: 90vw;
+    padding: 1em 0; }
+    body > main > * > h1 {
+      color: red;
+      font-size: 200%; }
 
 body > footer {
   display: -ms-flexbox;
@@ -126,5 +149,23 @@ body > footer {
 
 .social a[title="Github"] {
   --color: #333; }
+
+#welcome {
+  font-size: 125%;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto; }
+  #welcome h1 {
+    display: inline-block;
+    padding: .3em .5em;
+    border-radius: .3em;
+    background: red;
+    color: white;
+    font: bold 80%/1 Lato, Helvetica Neue, sans-serif;
+    text-transform: uppercase; }
+  #welcome strong, #welcome a {
+    color: rgba(0, 0, 0, 0.7); }
 
 /*# sourceMappingURL=style.css.map */
