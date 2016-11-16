@@ -2,15 +2,26 @@
 
 $font-body: Lato, Helvetica Neue, sans-serif;
 $font-heading: Arvo, serif;
+$font-icons: "UIST2017 Icons", emoji;
+
+@font-face {
+	font-family: "UIST2017 Icons";
+	src: url(../fonts/uist2017-icons.woff);
+}
 
 * { margin: 0; }
 
 body {
+	display: flex;
+	flex-flow: column;
+	justify-content: stretch;
 	margin: 0;
+	min-height: 100vh;
 	background: white;
 	font: 100 100%/1.5 $font-body;
 	text-decoration-skip: ink;
 	font-kerning: normal;
+	font-synthesis: none;
 }
 
 body > header {
@@ -39,11 +50,11 @@ body > header {
 	}
 
 	h1 {
-		font: 900 600%/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font: 900 600%/1 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
 
 		img {
 			display: block;
-			height: 2em;
+			height: 1.8em;
 			margin: auto;
 		}
 
@@ -70,13 +81,15 @@ body > header {
 			display: block;
 
 			&::before {
+				font: 100% $font-icons;
+				color: red;
 				margin-right: .4rem;
 			}
 		}
 
 		.place {
 			&::before {
-				content: "\1F1E8\1F1E6"; /* Canadian flag emoji */
+				content: "📍";
 			}
 		}
 
@@ -88,5 +101,72 @@ body > header {
 				content: "📅"
 			}
 		}
+	}
+}
+
+body > main {
+	flex: 1;
+	max-width: 60rem;
+	margin: auto;
+	padding: 1em;
+}
+
+body > footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1em;
+	background: hsl(220, 10%, 90%);
+	font-weight: bold;
+
+	& > p {
+		min-width: 20em;
+	}
+
+
+}
+
+
+.social {
+	a {
+		display: inline-block;
+		min-width: 1em;
+		padding: .6em;
+		border-radius: 50%;
+		color: white;
+		text-decoration: none;
+		text-align: center;
+		font: 120%/1 $font-icons;
+		background: gray;
+		background: var(--color);
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+		&:hover {
+			color: var(--color);
+			background: white;
+		}
+	}
+
+	// From https://brandcolors.net
+
+	a[title="Facebook"] {
+		--color: #3b5998;
+	}
+
+	a[title="Twitter"] {
+		--color: #1da1f2;
+	}
+
+	a[title="YouTube"] {
+		--color: #cd201f;
+	}
+
+	a[title="Flickr"] {
+		--color: #ff0084;
+	}
+
+	a[title="Github"] {
+		--color: #333;
 	}
 }

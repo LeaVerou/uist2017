@@ -12,7 +12,7 @@ var fileinclude = require("gulp-file-include");
 var notify = require("gulp-notify");
 
 gulp.task("sass", function() {
-	return gulp.src(["**/*.scss", "!node_modules/**"])
+	return gulp.src(["**/*.scss", "!node_modules/**", "!sources/**"])
 		.pipe(sourcemaps.init())
 		.pipe(sass().on("error", sass.logError))
 		.pipe(autoprefixer({
