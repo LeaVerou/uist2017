@@ -7,17 +7,6 @@
 * {
   margin: 0; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Arvo, serif;
-  font-weight: normal; }
-
-a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold; }
-  a:hover {
-    text-decoration: underline; }
-
 body {
   display: -ms-flexbox;
   display: flex;
@@ -33,6 +22,18 @@ body {
   text-decoration-skip: ink;
   font-kerning: normal;
   font-synthesis: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arvo, serif;
+  font-weight: normal;
+  line-height: 1.2; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold; }
+  a:hover {
+    text-decoration: underline; }
 
 body > header {
   padding: 1em 1.5em 1.8em;
@@ -68,11 +69,14 @@ body > header {
     font-size: 95%;
     line-height: 1; }
   body > header p {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    font: 150% Arvo, serif;
-    text-align: right; }
+    padding: .5em;
+    font: 150%/1.5 Arvo, serif; }
+    @media (min-width: 800px) {
+      body > header p {
+        position: absolute;
+        top: 0;
+        right: 1rem;
+        text-align: right; } }
     body > header p .place, body > header p time {
       display: block; }
       body > header p .place::before, body > header p time::before {
@@ -106,17 +110,20 @@ body > main {
       font-size: 200%; }
 
 body > footer {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-align: center;
-  align-items: center;
   padding: 1em;
   background: #e3e5e8;
   font-weight: bold; }
-  body > footer > p {
-    min-width: 20em; }
+  @media (min-width: 500px) {
+    body > footer {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      body > footer > p {
+        width: 46rem;
+        max-width: calc(100vw - 18em); } }
 
 .social a {
   display: inline-block;
@@ -151,7 +158,6 @@ body > footer {
   --color: #333; }
 
 #welcome {
-  font-size: 125%;
   color: rgba(0, 0, 0, 0.5);
   font-weight: bold;
   -webkit-hyphens: auto;
@@ -167,5 +173,8 @@ body > footer {
     text-transform: uppercase; }
   #welcome strong, #welcome a {
     color: rgba(0, 0, 0, 0.7); }
+  @media (min-width: 800px) {
+    #welcome {
+      font-size: 125%; } }
 
 /*# sourceMappingURL=style.css.map */

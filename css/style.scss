@@ -11,21 +11,6 @@ $font-icons: "UIST2017 Icons", emoji;
 
 * { margin: 0; }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: $font-heading;
-	font-weight: normal;
-}
-
-a {
-	text-decoration: none;
-	color: inherit;
-	font-weight: bold;
-
-	&:hover {
-		text-decoration: underline;
-	}
-}
-
 body {
 	display: flex;
 	flex-flow: column;
@@ -37,6 +22,22 @@ body {
 	text-decoration-skip: ink;
 	font-kerning: normal;
 	font-synthesis: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-heading;
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-weight: bold;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 body > header {
@@ -87,11 +88,15 @@ body > header {
 	}
 
 	p {
-		position: absolute;
-		top: 1em;
-		right: 1em;
-		font: 150% $font-heading;
-		text-align: right;
+		padding: .5em;
+		font: 150%/1.5 $font-heading;
+
+		@media (min-width: 800px) {
+			position: absolute;
+			top: 0;
+			right: 1rem;
+			text-align: right;
+		}
 
 		.place, time {
 			display: block;
@@ -140,15 +145,19 @@ body > main {
 }
 
 body > footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	padding: 1em;
 	background: hsl(220, 10%, 90%);
 	font-weight: bold;
 
-	& > p {
-		min-width: 20em;
+	@media (min-width: 500px) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		& > p {
+			width: 46rem;
+			max-width: calc(100vw - 18em);
+		}
 	}
 }
 
@@ -198,7 +207,6 @@ body > footer {
 }
 
 #welcome {
-	font-size: 125%;
 	color: rgba(0,0,0,.5);
 	font-weight: bold;
 	hyphens: auto;
@@ -215,5 +223,9 @@ body > footer {
 
 	strong, a {
 		color: rgba(0,0,0,.7);
+	}
+
+	@media (min-width: 800px) {
+		font-size: 125%;
 	}
 }
