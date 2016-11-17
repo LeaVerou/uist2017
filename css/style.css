@@ -58,7 +58,7 @@ body > header {
     font: 900 600%/1 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif; }
     body > header h1 img {
       display: block;
-      height: 1.8em;
+      height: 1.6em;
       margin: auto;
       filter: drop-shadow(0 0 0.1em rgba(0, 0, 0, 0.4)); }
     body > header h1 time {
@@ -81,7 +81,7 @@ body > header {
       display: block; }
       body > header p .place::before, body > header p time::before {
         font: 100% "UIST2017 Icons", emoji;
-        color: red;
+        color: #ff2b00;
         margin-right: .4rem; }
     body > header p .place::before {
       content: "📍"; }
@@ -106,7 +106,8 @@ body > main {
     max-width: 90vw;
     padding: 1em 0; }
     body > main > * > h1 {
-      color: red;
+      margin: .5em 0;
+      color: #ff2b00;
       font-size: 200%; }
 
 body > footer {
@@ -129,6 +130,7 @@ body > footer {
   display: inline-block;
   min-width: 1em;
   padding: .6em;
+  margin: 0 .1em;
   border-radius: 50%;
   color: white;
   text-decoration: none;
@@ -164,17 +166,60 @@ body > footer {
   -ms-hyphens: auto;
   hyphens: auto; }
   #welcome h1 {
-    display: inline-block;
+    display: inline;
     padding: .3em .5em;
     border-radius: .3em;
-    background: red;
+    background: #ff2b00;
     color: white;
-    font: bold 80%/1 Lato, Helvetica Neue, sans-serif;
+    font: bold 80%/1.5 Lato, Helvetica Neue, sans-serif;
     text-transform: uppercase; }
   #welcome strong, #welcome a {
     color: rgba(0, 0, 0, 0.7); }
   @media (min-width: 800px) {
     #welcome {
       font-size: 125%; } }
+
+table {
+  width: 100%;
+  border-spacing: 0; }
+  table thead {
+    color: rgba(0, 0, 0, 0.5);
+    font: bold 100% Arvo, serif; }
+  table th, table td {
+    padding: .4em .5em; }
+  table th {
+    text-align: left; }
+
+#dates table tbody td:empty::before {
+  content: "TBD"; }
+
+#dates table tbody tr:nth-child(odd) {
+  background: #ffeae6; }
+
+#dates table tbody th {
+  font-weight: normal; }
+  #dates table tbody th[aria-label]::after {
+    content: attr(aria-label);
+    display: inline-block;
+    padding: .4em .5em;
+    margin-left: .5em;
+    border-radius: .3em;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font: bold 80%/1 Lato, Helvetica Neue, sans-serif;
+    text-transform: uppercase; }
+  tr:not(.passed) #dates table tbody th[aria-label="deadline"]::after {
+    background: #70a7c2; }
+
+#dates table tbody td {
+  display: -ms-flexbox;
+  display: flex; }
+  #dates table tbody td time {
+    font-weight: bold; }
+  #dates table tbody td .countdown {
+    -ms-flex: 1;
+    flex: 1;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.6); }
 
 /*# sourceMappingURL=style.css.map */

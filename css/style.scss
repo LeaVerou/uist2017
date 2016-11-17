@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Arvo:400,700|Lato:300,400,700,900&subset=latin-ext');
 
-$font-body: Lato, Helvetica Neue, sans-serif;
-$font-heading: Arvo, serif;
-$font-icons: "UIST2017 Icons", emoji;
+$body-font: Lato, Helvetica Neue, sans-serif;
+$heading-font: Arvo, serif;
+$icon-font: "UIST2017 Icons", emoji;
+
+$accent-color: hsl(10, 100%, 50%);
+$secondary-color: hsl(200, 40%, 50%);
 
 @font-face {
 	font-family: "UIST2017 Icons";
@@ -18,14 +21,14 @@ body {
 	margin: 0;
 	min-height: 100vh;
 	background: white;
-	font: 100 100%/1.5 $font-body;
+	font: 100 100%/1.5 $body-font;
 	text-decoration-skip: ink;
 	font-kerning: normal;
 	font-synthesis: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $font-heading;
+	font-family: $heading-font;
 	font-weight: normal;
 	line-height: 1.2;
 }
@@ -70,7 +73,7 @@ body > header {
 
 		img {
 			display: block;
-			height: 1.8em;
+			height: 1.6em;
 			margin: auto;
 			filter: drop-shadow(0 0 .1em rgba(0,0,0,.4));
 		}
@@ -89,7 +92,7 @@ body > header {
 
 	p {
 		padding: .5em;
-		font: 150%/1.5 $font-heading;
+		font: 150%/1.5 $heading-font;
 
 		@media (min-width: 800px) {
 			position: absolute;
@@ -102,8 +105,8 @@ body > header {
 			display: block;
 
 			&::before {
-				font: 100% $font-icons;
-				color: red;
+				font: 100% $icon-font;
+				color: $accent-color;
 				margin-right: .4rem;
 			}
 		}
@@ -138,7 +141,8 @@ body > main {
 		padding: 1em 0;
 
 		& > h1 {
-			color: red;
+			margin: .5em 0;
+			color: $accent-color;
 			font-size: 200%;
 		}
 	}
@@ -167,11 +171,12 @@ body > footer {
 		display: inline-block;
 		min-width: 1em;
 		padding: .6em;
+		margin: 0 .1em;
 		border-radius: 50%;
 		color: white;
 		text-decoration: none;
 		text-align: center;
-		font: 120%/1 $font-icons;
+		font: 120%/1 $icon-font;
 		background: gray;
 		background: var(--color);
 		-webkit-font-smoothing: antialiased;
@@ -212,12 +217,12 @@ body > footer {
 	hyphens: auto;
 
 	h1 {
-		display: inline-block;
+		display: inline;
 		padding: .3em .5em;
 		border-radius: .3em;
-		background: red;
+		background: $accent-color;
 		color: white;
-		font: bold 80%/1 $font-body;
+		font: bold 80%/1.5 $body-font;
 		text-transform: uppercase;
 	}
 
@@ -227,5 +232,77 @@ body > footer {
 
 	@media (min-width: 800px) {
 		font-size: 125%;
+	}
+}
+
+table {
+	width: 100%;
+	border-spacing: 0;
+
+	thead {
+		color: rgba(0,0,0,.5);
+		font: bold 100% $heading-font;
+	}
+
+	th, td {
+		padding: .4em .5em;
+	}
+
+	th {
+		text-align: left;
+	}
+
+	tbody {
+
+	}
+
+
+}
+
+#dates table {
+	tbody {
+		td {
+			&:empty::before {
+				content: "TBD";
+			}
+		}
+
+		tr:nth-child(odd) {
+			background: lighten($accent-color, 45%);
+		}
+
+		th {
+			font-weight: normal;
+
+			&[aria-label]::after {
+				content: attr(aria-label);
+				display: inline-block;
+				padding: .4em .5em;
+				margin-left: .5em;
+				border-radius: .3em;
+				background: rgba(0,0,0,.3);
+				color: white;
+				font: bold 80%/1 $body-font;
+				text-transform: uppercase;
+			}
+
+			tr:not(.passed) &[aria-label="deadline"]::after {
+				background: lighten($secondary-color, 10%);
+			}
+		}
+
+		td {
+			display: flex;
+
+			time {
+				font-weight: bold;
+			}
+
+			.countdown {
+				flex: 1;
+				text-align: right;
+				color: rgba(0,0,0,.6);
+			}
+		}
 	}
 }
