@@ -38,11 +38,11 @@ a {
 
 body > header {
   padding: 1em 1.5em 1.8em;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url("../images/header.jpg") 50% 20%/cover #525f7a;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.2)), url("../images/header2.jpg") top/cover #4d91b3;
   color: white;
   text-align: center;
   font-size: 120%;
-  text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5); }
+  text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.3); }
   body > header .register {
     display: inline-block;
     padding: .4em 1em .5em;
@@ -62,7 +62,7 @@ body > header {
       display: block;
       height: 1.6em;
       margin: auto;
-      filter: drop-shadow(0 0 0.1em rgba(0, 0, 0, 0.4)); }
+      filter: drop-shadow(0 0 0.1em rgba(0, 0, 0, 0.3)); }
     body > header h1 time {
       font-weight: 100;
       letter-spacing: -.04em; }

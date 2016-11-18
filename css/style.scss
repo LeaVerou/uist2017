@@ -46,12 +46,12 @@ a {
 
 body > header {
 	padding: 1em 1.5em 1.8em;
-	background: linear-gradient(transparent, rgba(0,0,0,.5)),
-	            url("../images/header.jpg") 50% 20% / cover hsl(220, 20%, 40%);
+	background: linear-gradient(transparent, rgba(0,0,0,.2)),
+	            url("../images/header2.jpg") top / cover $secondary-color;
 	color: white;
 	text-align: center;
 	font-size: 120%;
-	text-shadow: 0 0 .5em rgba(0,0,0,.5);
+	text-shadow: 0 0 .5em rgba(0,0,0,.3);
 
 	.register {
 		display: inline-block;
@@ -77,7 +77,7 @@ body > header {
 			display: block;
 			height: 1.6em;
 			margin: auto;
-			filter: drop-shadow(0 0 .1em rgba(0,0,0,.4));
+			filter: drop-shadow(0 0 .1em rgba(0,0,0,.3));
 		}
 
 		time {
