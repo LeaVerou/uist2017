@@ -28,6 +28,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+	margin: .5em 0;
 	font-family: $heading-font;
 	font-weight: normal;
 	line-height: 1.2;
@@ -141,16 +142,16 @@ body > main {
 		padding: 1em 0;
 
 		& > h1 {
-			margin: .5em 0;
 			color: $accent-color;
-			font-size: 200%;
+			font-size: 220%;
 		}
 	}
 }
 
 body > footer {
+	position: relative;
 	padding: 1em;
-	background: hsl(220, 10%, 90%);
+	background: change-color($secondary-color, $lightness: 85%);
 	font-weight: bold;
 
 	@media (min-width: 500px) {
@@ -161,6 +162,29 @@ body > footer {
 		& > p {
 			width: 46rem;
 			max-width: calc(100vw - 18em);
+		}
+	}
+
+	@media (min-width: 1300px) {
+		@keyframes hue-rotate {
+			to {
+				filter: hue-rotate(360deg);
+			}
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 1em;
+			right: 1em;
+			width: 100px;
+			height: 120px;
+			background: url("../logo.svg") center / contain no-repeat;
+			animation: hue-rotate 25s linear infinite paused;
+		}
+
+		&:hover::before {
+			animation-play-state: running;
 		}
 	}
 }
@@ -220,6 +244,7 @@ body > footer {
 		display: inline;
 		padding: .3em .5em;
 		border-radius: .3em;
+		margin: 0;
 		background: $accent-color;
 		color: white;
 		font: bold 80%/1.5 $body-font;
@@ -303,6 +328,59 @@ table {
 				text-align: right;
 				color: rgba(0,0,0,.6);
 			}
+		}
+	}
+}
+
+#organizers {
+
+	@media (min-width: 750px) {
+		columns: 2;
+
+		& > h1 {
+			column-span: all;
+		}
+	}
+
+	section {
+		-webkit-column-break-inside: avoid;
+		page-break-inside: avoid;
+		break-inside: avoid;
+		padding: .01em 1em .5em;
+		margin: 1em 0;
+		border-radius: .3em;
+		border: .1em solid change-color($secondary-color, $lightness: 85%);
+		background: change-color($secondary-color, $lightness: 93%);
+
+		& > h1 {
+			margin-bottom: .8em;
+			color: $secondary-color;
+			font-size: 120%;
+			font-weight: bold;
+		}
+	}
+
+	article {
+		margin: .5em 0;
+		clear:both;
+
+		h1 {
+			margin: 0;
+			font-weight: bold;
+			font-size: 120%;
+		}
+
+		& > a {
+			font-weight: 100;
+		}
+
+		img {
+			float: left;
+			width: 3em;
+			height: 3em;
+			margin-right: 1em;
+			object-fit: cover;
+			border-radius: 50%;
 		}
 	}
 }

@@ -24,6 +24,7 @@ body {
   font-synthesis: none; }
 
 h1, h2, h3, h4, h5, h6 {
+  margin: .5em 0;
   font-family: Arvo, serif;
   font-weight: normal;
   line-height: 1.2; }
@@ -106,13 +107,13 @@ body > main {
     max-width: 90vw;
     padding: 1em 0; }
     body > main > * > h1 {
-      margin: .5em 0;
       color: #ff2b00;
-      font-size: 200%; }
+      font-size: 220%; }
 
 body > footer {
+  position: relative;
   padding: 1em;
-  background: #e3e5e8;
+  background: #c9dee8;
   font-weight: bold; }
   @media (min-width: 500px) {
     body > footer {
@@ -125,6 +126,21 @@ body > footer {
       body > footer > p {
         width: 46rem;
         max-width: calc(100vw - 18em); } }
+  @media (min-width: 1300px) {
+    @keyframes hue-rotate {
+      to {
+        filter: hue-rotate(360deg); } }
+    body > footer::before {
+      content: "";
+      position: absolute;
+      bottom: 1em;
+      right: 1em;
+      width: 100px;
+      height: 120px;
+      background: url("../logo.svg") center/contain no-repeat;
+      animation: hue-rotate 25s linear infinite paused; }
+    body > footer:hover::before {
+      animation-play-state: running; } }
 
 .social a {
   display: inline-block;
@@ -169,6 +185,7 @@ body > footer {
     display: inline;
     padding: .3em .5em;
     border-radius: .3em;
+    margin: 0;
     background: #ff2b00;
     color: white;
     font: bold 80%/1.5 Lato, Helvetica Neue, sans-serif;
@@ -221,5 +238,44 @@ table {
     flex: 1;
     text-align: right;
     color: rgba(0, 0, 0, 0.6); }
+
+@media (min-width: 750px) {
+  #organizers {
+    -moz-columns: 2;
+    columns: 2; }
+    #organizers > h1 {
+      -moz-column-span: all;
+      column-span: all; } }
+
+#organizers section {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  padding: .01em 1em .5em;
+  margin: 1em 0;
+  border-radius: .3em;
+  border: 0.1em solid #c9dee8;
+  background: #e6f0f4; }
+  #organizers section > h1 {
+    margin-bottom: .8em;
+    color: #4d91b3;
+    font-size: 160%;
+    font-weight: bold; }
+
+#organizers article {
+  margin: .5em 0;
+  clear: both; }
+  #organizers article h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 120%; }
+  #organizers article > a {
+    font-weight: 100; }
+  #organizers article img {
+    float: left;
+    width: 3em;
+    height: 3em;
+    margin-right: 1em;
+    object-fit: cover;
+    border-radius: 50%; }
 
 /*# sourceMappingURL=style.css.map */
