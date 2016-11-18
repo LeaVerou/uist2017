@@ -56,6 +56,7 @@ body > header {
       mix-blend-mode: screen;
       text-shadow: none; }
   body > header h1 {
+    margin: 0;
     font: 900 600%/1 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif; }
     body > header h1 img {
       display: block;
@@ -258,7 +259,7 @@ table {
   #organizers section > h1 {
     margin-bottom: .8em;
     color: #4d91b3;
-    font-size: 160%;
+    font-size: 120%;
     font-weight: bold; }
 
 #organizers article {
