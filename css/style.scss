@@ -46,12 +46,12 @@ a {
 
 body > header {
 	padding: 1em 1.5em 1.8em;
-	background: linear-gradient(transparent, rgba(0,0,0,.2)),
+	background: linear-gradient(transparent, rgba(0,0,0,.4)),
 	            url("../images/header.jpg") top / cover $secondary-color;
 	color: white;
 	text-align: center;
 	font-size: 120%;
-	text-shadow: 0 0 .5em rgba(0,0,0,.3);
+	text-shadow: 0 0 .5em rgba(0,0,0,.2);
 
 	.register {
 		display: inline-block;
@@ -71,36 +71,54 @@ body > header {
 
 	h1 {
 		margin: 0;
-		font: 900 600%/1 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
+		filter: drop-shadow(0 0 .1em rgba(0,0,0,.3));
+
+		.wordmark {
+			display: inline-block;
+			margin-top: .1em;
+			max-width: 100%;
+			background: url(../wordmark.svg) no-repeat top / contain;
+			color: transparent;
+			text-shadow: none;
+			overflow: hidden;
+			font: 900 300%/.8 'Helvetica LT Black', 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
+		}
 
 		img {
 			display: block;
-			height: 1.6em;
+			height: 4.7em;
 			margin: auto;
-			filter: drop-shadow(0 0 .1em rgba(0,0,0,.3));
 		}
 
 		time {
-			font-weight: 100;
-			letter-spacing: -.04em;
+			font-family: 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
+			font-weight: 300;
+			letter-spacing: -.02em;
 		}
 	}
 
 	h2 {
 		font: inherit;
-		font-size: 95%;
+		font-size: 90%;
 		line-height: 1;
+	}
+
+	@media (max-width: 600px) {
+		hgroup {
+			font-size: 60%;
+		}
 	}
 
 	p {
 		padding: .5em;
-		font: 150%/1.5 $heading-font;
+		font: 100%/1.5 $heading-font;
 
 		@media (min-width: 800px) {
 			position: absolute;
 			top: 0;
 			right: 1rem;
 			text-align: right;
+			font-size: 150%;
 		}
 
 		.place, time {
