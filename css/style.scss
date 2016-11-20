@@ -374,6 +374,14 @@ table {
 
 				@media (min-width: 800px) {
 					text-align: right;
+
+					&::before {
+						content: " (";
+					}
+
+					&::after {
+						content: ")";
+					}
 				}
 			}
 

@@ -40,8 +40,8 @@ var _ = self.CountDown = $.Class({
 			let text = this.toString({array, terms});
 			let interval = _.units[(array[Math.min(array.length, terms) - 1]).unit] * 1000;
 
-			element.textContent = ` (${text} remaining)`;
-			
+			element.textContent = `${text} remaining`;
+
 			let ret = callback.call(this);
 
 			if (ret !== false) {

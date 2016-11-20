@@ -269,7 +269,11 @@ table {
     color: rgba(0, 0, 0, 0.6); }
     @media (min-width: 800px) {
       #dates table tbody td .countdown {
-        text-align: right; } }
+        text-align: right; }
+        #dates table tbody td .countdown::before {
+          content: " ("; }
+        #dates table tbody td .countdown::after {
+          content: ")"; } }
   @media (max-width: 800px) {
     #dates table tbody td {
       -ms-flex-flow: column;
