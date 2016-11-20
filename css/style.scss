@@ -27,7 +27,7 @@ body {
 	margin: 0;
 	min-height: 100vh;
 	background: white;
-	font: 100 100%/1.5 $body-font;
+	font: 300 100%/1.5 $body-font;
 	text-decoration-skip: ink;
 	font-kerning: normal;
 	font-synthesis: none;
@@ -249,6 +249,7 @@ body > footer {
 
 
 		&:hover {
+			color: gray;
 			color: var(--color);
 			background: white;
 		}
@@ -341,20 +342,22 @@ table {
 		th {
 			font-weight: normal;
 
-			&[aria-label]::after {
-				content: attr(aria-label);
-				display: inline-block;
-				padding: .4em .5em;
-				margin-left: .5em;
-				border-radius: .3em;
-				background: rgba(0,0,0,.3);
-				color: white;
-				font: bold 80%/1 $body-font;
-				text-transform: uppercase;
-			}
+			@media (min-width: 600px) {
+				&[aria-label]::after {
+					content: attr(aria-label);
+					display: inline-block;
+					padding: .4em .5em;
+					margin-left: .5em;
+					border-radius: .3em;
+					background: rgba(0,0,0,.3);
+					color: white;
+					font: bold 80%/1 $body-font;
+					text-transform: uppercase;
+				}
 
-			tr:not(.passed) &[aria-label="deadline"]::after {
-				background: lighten($secondary-color, 10%);
+				tr:not(.passed) &[aria-label="deadline"]::after {
+					background: lighten($secondary-color, 10%);
+				}
 			}
 		}
 
@@ -367,8 +370,15 @@ table {
 
 			.countdown {
 				flex: 1;
-				text-align: right;
 				color: rgba(0,0,0,.6);
+
+				@media (min-width: 800px) {
+					text-align: right;
+				}
+			}
+
+			@media (max-width: 800px) {
+				flex-flow: column;
 			}
 		}
 	}

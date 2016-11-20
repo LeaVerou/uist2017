@@ -17,7 +17,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background: white;
-  font: 100 100%/1.5 Lato, Helvetica Neue, sans-serif;
+  font: 300 100%/1.5 Lato, Helvetica Neue, sans-serif;
   -webkit-text-decoration-skip: ink;
   text-decoration-skip: ink;
   font-kerning: normal;
@@ -185,6 +185,7 @@ body > footer {
   background: gray;
   background: var(--color); }
   .social a:hover {
+    color: gray;
     color: var(--color);
     background: white; }
 
@@ -243,18 +244,19 @@ table {
 
 #dates table tbody th {
   font-weight: normal; }
-  #dates table tbody th[aria-label]::after {
-    content: attr(aria-label);
-    display: inline-block;
-    padding: .4em .5em;
-    margin-left: .5em;
-    border-radius: .3em;
-    background: rgba(0, 0, 0, 0.3);
-    color: white;
-    font: bold 80%/1 Lato, Helvetica Neue, sans-serif;
-    text-transform: uppercase; }
-  tr:not(.passed) #dates table tbody th[aria-label="deadline"]::after {
-    background: #70a7c2; }
+  @media (min-width: 600px) {
+    #dates table tbody th[aria-label]::after {
+      content: attr(aria-label);
+      display: inline-block;
+      padding: .4em .5em;
+      margin-left: .5em;
+      border-radius: .3em;
+      background: rgba(0, 0, 0, 0.3);
+      color: white;
+      font: bold 80%/1 Lato, Helvetica Neue, sans-serif;
+      text-transform: uppercase; }
+    tr:not(.passed) #dates table tbody th[aria-label="deadline"]::after {
+      background: #70a7c2; } }
 
 #dates table tbody td {
   display: -ms-flexbox;
@@ -264,8 +266,14 @@ table {
   #dates table tbody td .countdown {
     -ms-flex: 1;
     flex: 1;
-    text-align: right;
     color: rgba(0, 0, 0, 0.6); }
+    @media (min-width: 800px) {
+      #dates table tbody td .countdown {
+        text-align: right; } }
+  @media (max-width: 800px) {
+    #dates table tbody td {
+      -ms-flex-flow: column;
+      flex-flow: column; } }
 
 @media (min-width: 750px) {
   #organizers {
