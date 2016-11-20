@@ -28,6 +28,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Arvo, serif;
   font-weight: normal;
   line-height: 1.2; }
+  h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+    font-weight: inherit; }
 
 a {
   text-decoration: none;
@@ -95,7 +97,9 @@ body > header {
     body > header p .place, body > header p time {
       display: block; }
       body > header p .place::before, body > header p time::before {
-        font: 100% "UIST2017 Icons", emoji;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font: 100%/1 "UIST2017 Icons", emoji;
         color: #ff2b00;
         margin-right: .4rem; }
     body > header p .place::before {
@@ -120,6 +124,9 @@ body > main {
     width: 60rem;
     max-width: 90vw;
     padding: 1em 0; }
+    @media (min-width: 1600px) {
+      body > main > * {
+        width: 75rem; } }
     body > main > * > h1 {
       color: #ff2b00;
       font-size: 220%; }
@@ -143,6 +150,9 @@ body > footer {
       body > footer > :first-child {
         width: 46rem;
         max-width: calc(100vw - 18em); } }
+    @media (min-width: 500px) and (min-width: 1600px) {
+      body > footer > :first-child {
+        width: 61rem; } }
   @media (min-width: 1300px) {
     @keyframes hue-rotate {
       to {
@@ -168,11 +178,12 @@ body > footer {
   color: white;
   text-decoration: none;
   text-align: center;
-  font: 120%/1 "UIST2017 Icons", emoji;
-  background: gray;
-  background: var(--color);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  font: 100%/1 "UIST2017 Icons", emoji;
+  font-size: 120%;
+  background: gray;
+  background: var(--color); }
   .social a:hover {
     color: var(--color);
     background: white; }
@@ -264,19 +275,50 @@ table {
       -moz-column-span: all;
       column-span: all; } }
 
+@media (min-width: 1600px) {
+  #organizers {
+    -moz-columns: 3;
+    columns: 3; } }
+
 #organizers section {
   page-break-inside: avoid;
   break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
   padding: .01em 1em .5em;
-  margin: 1em 0;
+  margin: .6em 0;
   border-radius: .3em;
   border: 0.1em solid #c9dee8;
   background: #e6f0f4; }
   #organizers section > h1 {
-    margin-bottom: .8em;
+    margin-bottom: .0em;
     color: #4d91b3;
     font-size: 120%;
     font-weight: bold; }
+  #organizers section a[href^=mailto] {
+    display: block;
+    margin-bottom: .8em;
+    font-weight: 400;
+    color: #4d91b3; }
+
+@keyframes wobble {
+  33.3% {
+    transform: rotate(10deg); }
+  66.6% {
+    transform: rotate(-10deg); } }
+    #organizers section a[href^=mailto]::before {
+      content: "✉";
+      display: inline-block;
+      margin-right: .4em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font: 100%/1 "UIST2017 Icons", emoji;
+      color: #ff2b00;
+      animation: wobble .5s infinite paused; }
+    #organizers section a[href^=mailto]:hover::before {
+      animation-play-state: running;
+      color: #4d91b3; }
 
 #organizers article {
   margin: .5em 0;
@@ -286,7 +328,7 @@ table {
     font-weight: bold;
     font-size: 120%; }
   #organizers article > a {
-    font-weight: 100; }
+    font-weight: 300; }
   #organizers article img {
     float: left;
     width: 3em;

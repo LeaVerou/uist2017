@@ -7,6 +7,12 @@ $icon-font: "UIST2017 Icons", emoji;
 $accent-color: hsl(10, 100%, 50%);
 $secondary-color: hsl(200, 40%, 50%);
 
+@mixin icon {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font: 100%/1 $icon-font;
+}
+
 @font-face {
 	font-family: "UIST2017 Icons";
 	src: url(../fonts/uist2017-icons.woff);
@@ -32,6 +38,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $heading-font;
 	font-weight: normal;
 	line-height: 1.2;
+
+	& > a {
+		font-weight: inherit;
+	}
 }
 
 a {
@@ -125,7 +135,7 @@ body > header {
 			display: block;
 
 			&::before {
-				font: 100% $icon-font;
+				@include icon;
 				color: $accent-color;
 				margin-right: .4rem;
 			}
@@ -160,6 +170,10 @@ body > main {
 		max-width: 90vw;
 		padding: 1em 0;
 
+		@media (min-width: 1600px) {
+			width: 75rem;
+		}
+
 		& > h1 {
 			color: $accent-color;
 			font-size: 220%;
@@ -186,6 +200,10 @@ body > footer {
 		& > :first-child {
 			width: 46rem;
 			max-width: calc(100vw - 18em);
+
+			@media (min-width: 1600px) {
+				width: 46rem + 15rem;
+			}
 		}
 	}
 
@@ -224,11 +242,11 @@ body > footer {
 		color: white;
 		text-decoration: none;
 		text-align: center;
-		font: 120%/1 $icon-font;
+		@include icon;
+		font-size: 120%;
 		background: gray;
 		background: var(--color);
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+
 
 		&:hover {
 			color: var(--color);
@@ -357,7 +375,6 @@ table {
 }
 
 #organizers {
-
 	@media (min-width: 750px) {
 		columns: 2;
 
@@ -366,21 +383,52 @@ table {
 		}
 	}
 
+	@media (min-width: 1600px) {
+		columns: 3;
+	}
+
 	section {
-		-webkit-column-break-inside: avoid;
-		page-break-inside: avoid;
-		break-inside: avoid;
+		break-inside: avoid; // for the future
+		display: inline-block;  // workaround for lack
+		width: 100%;            // of break-inside support
+		box-sizing: border-box; // in Safari
 		padding: .01em 1em .5em;
-		margin: 1em 0;
+		margin: .6em 0;
 		border-radius: .3em;
 		border: .1em solid change-color($secondary-color, $lightness: 85%);
 		background: change-color($secondary-color, $lightness: 93%);
 
 		& > h1 {
-			margin-bottom: .8em;
+			margin-bottom: .0em;
 			color: $secondary-color;
 			font-size: 120%;
 			font-weight: bold;
+		}
+
+		a[href^=mailto] {
+			display: block;
+			margin-bottom: .8em;
+			font-weight: 400;
+			color: $secondary-color;
+
+			@keyframes wobble {
+				33.3%  { transform: rotate(10deg); }
+				66.6%  { transform: rotate(-10deg); }
+			}
+
+			&::before {
+				content: "✉";
+				display: inline-block;
+				margin-right: .4em;
+				@include icon;
+				color: $accent-color;
+				animation: wobble .5s infinite paused;
+			}
+
+			&:hover::before {
+				animation-play-state: running;
+				color: $secondary-color;
+			}
 		}
 	}
 
@@ -395,7 +443,7 @@ table {
 		}
 
 		& > a {
-			font-weight: 100;
+			font-weight: 300;
 		}
 
 		img {
