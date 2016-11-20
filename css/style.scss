@@ -199,7 +199,7 @@ body > footer {
 
 		& > :first-child {
 			width: 46rem;
-			max-width: calc(100vw - 18em);
+			max-width: calc(100vw - 18.5em);
 
 			@media (min-width: 1600px) {
 				width: 46rem + 15rem;
