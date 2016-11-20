@@ -47,7 +47,7 @@ a {
 body > header {
 	padding: 1em 1.5em 1.8em;
 	background: linear-gradient(transparent, rgba(0,0,0,.2)),
-	            url("../images/header2.jpg") top / cover $secondary-color;
+	            url("../images/header.jpg") top / cover $secondary-color;
 	color: white;
 	text-align: center;
 	font-size: 120%;
@@ -155,12 +155,17 @@ body > footer {
 	background: change-color($secondary-color, $lightness: 85%);
 	font-weight: bold;
 
+	small {
+		display: block;
+		color: rgba(0,0,0,.5);
+	}
+
 	@media (min-width: 500px) {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 
-		& > p {
+		& > :first-child {
 			width: 46rem;
 			max-width: calc(100vw - 18em);
 		}

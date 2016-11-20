@@ -38,7 +38,7 @@ a {
 
 body > header {
   padding: 1em 1.5em 1.8em;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.2)), url("../images/header2.jpg") top/cover #4d91b3;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.2)), url("../images/header.jpg") top/cover #4d91b3;
   color: white;
   text-align: center;
   font-size: 120%;
@@ -116,6 +116,9 @@ body > footer {
   padding: 1em;
   background: #c9dee8;
   font-weight: bold; }
+  body > footer small {
+    display: block;
+    color: rgba(0, 0, 0, 0.5); }
   @media (min-width: 500px) {
     body > footer {
       display: -ms-flexbox;
@@ -124,7 +127,7 @@ body > footer {
       justify-content: center;
       -ms-flex-align: center;
       align-items: center; }
-      body > footer > p {
+      body > footer > :first-child {
         width: 46rem;
         max-width: calc(100vw - 18em); } }
   @media (min-width: 1300px) {
