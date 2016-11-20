@@ -355,7 +355,7 @@ table {
 					text-transform: uppercase;
 				}
 
-				tr:not(.passed) &[aria-label="deadline"]::after {
+				&[aria-label="deadline"]::after {
 					background: lighten($secondary-color, 10%);
 				}
 			}

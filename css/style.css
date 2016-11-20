@@ -255,7 +255,7 @@ table {
       color: white;
       font: bold 80%/1 Lato, Helvetica Neue, sans-serif;
       text-transform: uppercase; }
-    tr:not(.passed) #dates table tbody th[aria-label="deadline"]::after {
+    #dates table tbody th[aria-label="deadline"]::after {
       background: #70a7c2; } }
 
 #dates table tbody td {
