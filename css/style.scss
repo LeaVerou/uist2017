@@ -301,6 +301,10 @@ body > footer {
 	@media (min-width: 800px) {
 		font-size: 125%;
 	}
+
+	p {
+		display: inline;
+	}
 }
 
 table {

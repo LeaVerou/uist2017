@@ -224,6 +224,8 @@ body > footer {
   @media (min-width: 800px) {
     #welcome {
       font-size: 125%; } }
+  #welcome p {
+    display: inline; }
 
 table {
   width: 100%;
