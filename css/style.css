@@ -1,5 +1,17 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Arvo:400,700|Lato:300,400,700,900&subset=latin-ext");
+body > main > section > section > h2, body > main > section > section > section h1, #welcome h1 {
+  float: left;
+  padding: .3em .5em;
+  border-radius: .3em;
+  margin: 0 .4em 0 0;
+  background: #ff2b00;
+  color: white;
+  font: bold 80%/1.3 Lato, Helvetica Neue, sans-serif;
+  text-transform: uppercase; }
+  body > main > section > section > h2 a, body > main > section > section > section h1 a, #welcome h1 a {
+    color: inherit; }
+
 @font-face {
   font-family: "UIST2017 Icons";
   src: url(../fonts/uist2017-icons.woff); }
@@ -38,7 +50,9 @@ a {
   a:hover {
     text-decoration: underline; }
   p a {
-    color: #36657d; }
+    color: #3d748f; }
+    p a[href^="http://"]::after, p a[href^="https://"]::after {
+      content: "️ ↗️️"; }
 
 body > header {
   padding: 1em 0 0;
@@ -187,12 +201,19 @@ body > main {
   body > main > section > h2 {
     font-weight: bold;
     color: #4d91b3; }
+  body > main > section > section > h2, body > main > section > section > section h1 {
+    margin-top: 1.2em;
+    background: #82b2c9; }
+    body > main > section > section > h2 + p, body > main > section > section > section h1 + p {
+      margin-top: 1em; }
   body > main > * {
     width: 60rem;
     max-width: 90vw; }
     @media (min-width: 1600px) {
       body > main > * {
         width: 75rem; } }
+  body > main :not(h1):not(h2) + p {
+    margin-top: 1em; }
 
 body > footer {
   position: relative;
@@ -273,24 +294,11 @@ body > footer {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto; }
-  #welcome h1 {
-    display: inline;
-    padding: .3em .5em;
-    border-radius: .3em;
-    margin: 0;
-    background: #ff2b00;
-    color: white;
-    font: bold 80%/1.5 Lato, Helvetica Neue, sans-serif;
-    text-transform: uppercase; }
-    #welcome h1 a {
-      color: inherit; }
   #welcome strong, #welcome a {
     color: rgba(0, 0, 0, 0.7); }
   @media (min-width: 800px) {
     #welcome {
       font-size: 125%; } }
-  #welcome p {
-    display: inline; }
 
 table {
   width: 100%;
@@ -371,7 +379,7 @@ section.organizers {
   padding: .01em 1em .5em;
   margin: .6em 0;
   border-radius: .3em;
-  border: 0.1em solid #c9dee8;
+  border: 0.1em solid #d2e3ec;
   background: #e6f0f4; }
   #organizers > section > h1,
   section.organizers > h1 {
@@ -424,14 +432,27 @@ section.organizers {
       object-fit: cover;
       border-radius: 50%; }
 
-#toc.compact::before {
-  content: "Jump to section: "; }
-
-#toc.compact a {
-  display: inline-block;
-  padding: .1em .5em;
-  margin-right: .3em;
-  border-radius: .3em;
-  background: #e6f0f4; }
+#toc.compact {
+  padding: .8em 0;
+  margin-bottom: 1em;
+  background: #f1f6f9;
+  box-shadow: -50vw 0 #f1f6f9, 50vw 0 #f1f6f9; }
+  #toc.compact::before {
+    content: "Jump to section: ";
+    text-transform: uppercase;
+    font-size: 80%;
+    font-weight: 900;
+    color: #4d91b3; }
+  #toc.compact a {
+    display: inline-block;
+    padding: .1em .5em;
+    margin: .2em;
+    border-radius: .3em;
+    background: #d2e3ec;
+    font-weight: 900; }
+    #toc.compact a:hover {
+      background: #4d91b3;
+      color: #d2e3ec;
+      text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */

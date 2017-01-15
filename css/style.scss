@@ -7,10 +7,35 @@ $icon-font: "UIST2017 Icons", emoji;
 $accent-color: hsl(10, 100%, 50%);
 $secondary-color: hsl(200, 40%, 50%);
 
+// Add percentage of white to a color
+@function tint($color, $percent){
+	@return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent){
+	@return mix(black, $color, $percent);
+}
+
 @mixin icon {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font: 100%/1 $icon-font;
+}
+
+%inline-heading {
+	float: left;
+	padding: .3em .5em;
+	border-radius: .3em;
+	margin: 0 .4em 0 0;
+	background: $accent-color;
+	color: white;
+	font: bold 80%/1.3 $body-font;
+	text-transform: uppercase;
+
+	a {
+		color: inherit;
+	}
 }
 
 @font-face {
@@ -54,7 +79,14 @@ a {
 	}
 
 	p & {
-		color: darken($secondary-color, 15%);
+		color: shade($secondary-color, 20%);
+
+		&[href^="http://"],
+		&[href^="https://"] {
+			&::after {
+				content: "️ ↗️️";
+			}
+		}
 	}
 }
 
@@ -269,6 +301,19 @@ body > main {
 			font-weight: bold;
 			color: $secondary-color;
 		}
+
+
+		& > section > {
+			h2, section h1 {
+				@extend %inline-heading;
+				margin-top: 1.2em;
+				background: tint($secondary-color, 30%);
+
+				& + p {
+					margin-top: 1em;
+				}
+			}
+		}
 	}
 
 	& > * {
@@ -279,12 +324,16 @@ body > main {
 			width: 75rem;
 		}
 	}
+
+	:not(h1):not(h2) + p {
+		margin-top: 1em;
+	}
 }
 
 body > footer {
 	position: relative;
 	padding: 1em;
-	background: change-color($secondary-color, $lightness: 85%);
+	background: tint($secondary-color, 70%);
 	font-weight: bold;
 
 	small {
@@ -384,18 +433,7 @@ body > footer {
 	hyphens: auto;
 
 	h1 {
-		display: inline;
-		padding: .3em .5em;
-		border-radius: .3em;
-		margin: 0;
-		background: $accent-color;
-		color: white;
-		font: bold 80%/1.5 $body-font;
-		text-transform: uppercase;
-
-		a {
-			color: inherit;
-		}
+		@extend %inline-heading;
 	}
 
 	strong, a {
@@ -404,10 +442,6 @@ body > footer {
 
 	@media (min-width: 800px) {
 		font-size: 125%;
-	}
-
-	p {
-		display: inline;
 	}
 }
 
@@ -530,8 +564,8 @@ section.organizers {
 	padding: .01em 1em .5em;
 	margin: .6em 0;
 	border-radius: .3em;
-	border: .1em solid change-color($secondary-color, $lightness: 85%);
-	background: change-color($secondary-color, $lightness: 93%);
+	border: .1em solid tint($secondary-color, 75%);
+	background: tint($secondary-color, 86%);
 
 	& > h1 {
 		margin-bottom: .0em;
@@ -591,16 +625,33 @@ section.organizers {
 
 #toc {
 	&.compact {
+		padding: .8em 0;
+		margin-bottom: 1em;
+		$bg: tint($secondary-color, 92%);
+		background: $bg;
+		box-shadow: -50vw 0 $bg, 50vw 0 $bg;
+
 		&::before {
 			content: "Jump to section: ";
+			text-transform: uppercase;
+			font-size: 80%;
+			font-weight: 900;
+			color: $secondary-color;
 		}
 
 		a {
 			display: inline-block;
 			padding: .1em .5em;
-			margin-right: .3em;
+			margin: .2em;
 			border-radius: .3em;
-			background: change-color($secondary-color, $lightness: 93%);
+			background: tint($secondary-color, 75%);
+			font-weight: 900;
+
+			&:hover {
+				background: $secondary-color;
+				color: tint($secondary-color, 75%);
+				text-decoration: none;
+			}
 		}
 	}
 }
