@@ -37,9 +37,11 @@ a {
   font-weight: bold; }
   a:hover {
     text-decoration: underline; }
+  p a {
+    color: #36657d; }
 
 body > header {
-  padding: 1em 1.5em 1.8em;
+  padding: 1em 0 0;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("../images/header.jpg") top/cover #4d91b3;
   color: white;
   text-align: center;
@@ -57,23 +59,22 @@ body > header {
       color: black;
       mix-blend-mode: screen;
       text-shadow: none; }
-  body > header h1 {
+  body > header .logo {
+    font: inherit;
+    filter: drop-shadow(0 0 0.3em rgba(0, 0, 0, 0.3)); }
+    body > header .logo:hover {
+      text-decoration: none; }
+  body > header h1.wordmark {
+    display: inline-block;
     margin: 0;
-    filter: drop-shadow(0 0 0.1em rgba(0, 0, 0, 0.3)); }
-    body > header h1 .wordmark {
-      display: inline-block;
-      margin-top: .1em;
-      max-width: 100%;
-      background: url(../wordmark.svg) no-repeat top/contain;
-      color: transparent;
-      text-shadow: none;
-      overflow: hidden;
-      font: 900 300%/.8 'Helvetica LT Black', 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif; }
-    body > header h1 img {
-      display: block;
-      height: 4.7em;
-      margin: auto; }
-    body > header h1 time {
+    margin-top: .1em;
+    max-width: 100%;
+    background: url(../wordmark.svg) no-repeat top/contain;
+    color: transparent;
+    text-shadow: none;
+    overflow: hidden;
+    font: 900 600%/.8 'Helvetica LT Black', 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif; }
+    body > header h1.wordmark time {
       font-family: 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
       font-weight: 300;
       letter-spacing: -.02em; }
@@ -81,19 +82,23 @@ body > header {
     font: inherit;
     font-size: 90%;
     line-height: 1; }
+  body > header img {
+    display: block;
+    height: 9.5em;
+    margin: auto; }
   @media (max-width: 600px) {
-    body > header hgroup {
+    body > header:not(.compact) .logo {
       font-size: 60%; } }
   body > header p {
     padding: .5em;
-    font: 100%/1.5 Arvo, serif; }
+    font: 100%/1.6 Arvo, serif; }
     @media (min-width: 800px) {
       body > header p {
         position: absolute;
-        top: 0;
-        right: 1rem;
+        top: 1rem;
+        right: 1.5rem;
         text-align: right;
-        font-size: 150%; } }
+        font-size: 120%; } }
     body > header p .place, body > header p time {
       display: block; }
       body > header p .place::before, body > header p time::before {
@@ -101,7 +106,7 @@ body > header {
         -moz-osx-font-smoothing: grayscale;
         font: 100%/1 "UIST2017 Icons", emoji;
         color: #ff2b00;
-        margin-right: .4rem; }
+        margin-right: .8rem; }
     body > header p .place::before {
       content: "📍"; }
     body > header p time {
@@ -109,6 +114,54 @@ body > header {
       font-size: 105%; }
       body > header p time::before {
         content: "📅"; }
+  body > header nav {
+    margin-top: 2em;
+    background: rgba(0, 0, 0, 0.4); }
+    body > header nav ul {
+      display: -ms-flexbox;
+      display: flex;
+      padding: 0;
+      list-style: none; }
+    body > header nav li {
+      -ms-flex: 1;
+      flex: 1; }
+    body > header nav a {
+      display: block;
+      padding: .3em .5em; }
+      body > header nav a:hover {
+        background: #ff2b00;
+        text-decoration: none;
+        mix-blend-mode: screen; }
+    body > header nav .current {
+      box-shadow: 0 .3em black; }
+      body > header nav .current a {
+        box-shadow: 0 0.3em #ff2b00; }
+  body > header.compact {
+    background-position: 50% 15%; }
+    body > header.compact nav {
+      margin-top: 1em; }
+    body > header.compact .logo {
+      display: -ms-flexbox;
+      display: flex;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      margin-left: 2rem; }
+    body > header.compact img {
+      height: 4.8em;
+      margin-right: .5em; }
+    body > header.compact hgroup {
+      -ms-flex: 1;
+      flex: 1;
+      text-align: left;
+      font-size: 65%; }
+      body > header.compact hgroup h1.wordmark {
+        background-position: left; }
+      body > header.compact hgroup h2 {
+        margin-bottom: 0; }
+    @media (max-width: 800px) {
+      body > header.compact p {
+        display: none; } }
 
 body > main {
   -ms-flex: 1;
@@ -120,16 +173,26 @@ body > main {
   -ms-flex-align: center;
   align-items: center;
   padding: 1em; }
+  body > main > h1 {
+    padding: 0;
+    color: #4d91b3;
+    font: 900 450%/1 Lato, Helvetica Neue, sans-serif; }
+  body > main > h2,
+  body > main > section > h1 {
+    color: #ff2b00;
+    font-size: 220%; }
+  body > main section {
+    margin: 1.5em 0; }
+  body > main > section > section > h1,
+  body > main > section > h2 {
+    font-weight: bold;
+    color: #4d91b3; }
   body > main > * {
     width: 60rem;
-    max-width: 90vw;
-    padding: 1em 0; }
+    max-width: 90vw; }
     @media (min-width: 1600px) {
       body > main > * {
         width: 75rem; } }
-    body > main > * > h1 {
-      color: #ff2b00;
-      font-size: 220%; }
 
 body > footer {
   position: relative;
@@ -219,6 +282,8 @@ body > footer {
     color: white;
     font: bold 80%/1.5 Lato, Helvetica Neue, sans-serif;
     text-transform: uppercase; }
+    #welcome h1 a {
+      color: inherit; }
   #welcome strong, #welcome a {
     color: rgba(0, 0, 0, 0.7); }
   @media (min-width: 800px) {
@@ -238,48 +303,50 @@ table {
   table th {
     text-align: left; }
 
-#dates table tbody td:empty::before {
-  content: "TBD"; }
-
-#dates table tbody tr:nth-child(odd) {
-  background: #ffeae6; }
-
-#dates table tbody th {
-  font-weight: normal; }
-  @media (min-width: 600px) {
-    #dates table tbody th[aria-label]::after {
-      content: attr(aria-label);
-      display: inline-block;
-      padding: .4em .5em;
-      margin-left: .5em;
-      border-radius: .3em;
-      background: rgba(0, 0, 0, 0.3);
-      color: white;
-      font: bold 80%/1 Lato, Helvetica Neue, sans-serif;
-      text-transform: uppercase; }
-    #dates table tbody th[aria-label="deadline"]::after {
-      background: #70a7c2; } }
-
-#dates table tbody td {
-  display: -ms-flexbox;
-  display: flex; }
-  #dates table tbody td time {
-    font-weight: bold; }
-  #dates table tbody td .countdown {
-    -ms-flex: 1;
-    flex: 1;
-    color: rgba(0, 0, 0, 0.6); }
-    @media (min-width: 800px) {
-      #dates table tbody td .countdown {
-        text-align: right; }
-        #dates table tbody td .countdown::before {
-          content: " ("; }
-        #dates table tbody td .countdown::after {
-          content: ")"; } }
-  @media (max-width: 800px) {
-    #dates table tbody td {
-      -ms-flex-flow: column;
-      flex-flow: column; } }
+table.dates {
+  margin: 1em 0; }
+  table.dates caption {
+    color: #ff2b00;
+    font: bold 150%/1.5 Arvo, serif; }
+  table.dates tbody td:empty::before {
+    content: "TBD"; }
+  table.dates tbody tr:nth-child(odd) {
+    background: #ffeae6; }
+  table.dates tbody th {
+    font-weight: normal; }
+    @media (min-width: 600px) {
+      table.dates tbody th[aria-label]::after {
+        content: attr(aria-label);
+        display: inline-block;
+        padding: .4em .5em;
+        margin-left: .5em;
+        border-radius: .3em;
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        font: bold 80%/1 Lato, Helvetica Neue, sans-serif;
+        text-transform: uppercase; }
+      table.dates tbody th[aria-label="deadline"]::after {
+        background: #70a7c2; } }
+  table.dates tbody td {
+    display: -ms-flexbox;
+    display: flex; }
+    table.dates tbody td time {
+      font-weight: bold; }
+    table.dates tbody td .countdown {
+      -ms-flex: 1;
+      flex: 1;
+      color: rgba(0, 0, 0, 0.6); }
+      @media (min-width: 800px) {
+        table.dates tbody td .countdown {
+          text-align: right; }
+          table.dates tbody td .countdown::before {
+            content: " ("; }
+          table.dates tbody td .countdown::after {
+            content: ")"; } }
+    @media (max-width: 800px) {
+      table.dates tbody td {
+        -ms-flex-flow: column;
+        flex-flow: column; } }
 
 @media (min-width: 750px) {
   #organizers {
@@ -294,7 +361,8 @@ table {
     -moz-columns: 3;
     columns: 3; } }
 
-#organizers section {
+#organizers > section,
+section.organizers {
   page-break-inside: avoid;
   break-inside: avoid;
   display: inline-block;
@@ -305,12 +373,12 @@ table {
   border-radius: .3em;
   border: 0.1em solid #c9dee8;
   background: #e6f0f4; }
-  #organizers section > h1 {
+  #organizers > section > h1,
+  section.organizers > h1 {
     margin-bottom: .0em;
-    color: #4d91b3;
-    font-size: 120%;
-    font-weight: bold; }
-  #organizers section a[href^=mailto] {
+    font-size: 120%; }
+  #organizers > section a[href^=mailto],
+  section.organizers a[href^=mailto] {
     display: block;
     margin-bottom: .8em;
     font-weight: 400;
@@ -321,7 +389,8 @@ table {
     transform: rotate(10deg); }
   66.6% {
     transform: rotate(-10deg); } }
-    #organizers section a[href^=mailto]::before {
+    #organizers > section a[href^=mailto]::before,
+    section.organizers a[href^=mailto]::before {
       content: "✉";
       display: inline-block;
       margin-right: .4em;
@@ -330,25 +399,39 @@ table {
       font: 100%/1 "UIST2017 Icons", emoji;
       color: #ff2b00;
       animation: wobble .5s infinite paused; }
-    #organizers section a[href^=mailto]:hover::before {
+    #organizers > section a[href^=mailto]:hover::before,
+    section.organizers a[href^=mailto]:hover::before {
       animation-play-state: running;
       color: #4d91b3; }
+  #organizers > section article,
+  section.organizers article {
+    margin: .5em 0;
+    clear: both; }
+    #organizers > section article h1,
+    section.organizers article h1 {
+      margin: 0;
+      font-weight: bold;
+      font-size: 120%; }
+    #organizers > section article > a,
+    section.organizers article > a {
+      font-weight: 300; }
+    #organizers > section article img,
+    section.organizers article img {
+      float: left;
+      width: 3em;
+      height: 3em;
+      margin-right: 1em;
+      object-fit: cover;
+      border-radius: 50%; }
 
-#organizers article {
-  margin: .5em 0;
-  clear: both; }
-  #organizers article h1 {
-    margin: 0;
-    font-weight: bold;
-    font-size: 120%; }
-  #organizers article > a {
-    font-weight: 300; }
-  #organizers article img {
-    float: left;
-    width: 3em;
-    height: 3em;
-    margin-right: 1em;
-    object-fit: cover;
-    border-radius: 50%; }
+#toc.compact::before {
+  content: "Jump to section: "; }
+
+#toc.compact a {
+  display: inline-block;
+  padding: .1em .5em;
+  margin-right: .3em;
+  border-radius: .3em;
+  background: #e6f0f4; }
 
 /*# sourceMappingURL=style.css.map */

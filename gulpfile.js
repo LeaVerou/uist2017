@@ -30,23 +30,26 @@ gulp.task("update", function() {
 	gulp.src(["../mavo/dist/mavo.min.js"]).pipe(gulp.dest("js"));
 });
 
-// gulp.task("html", function() {
-// 	gulp.src(["**/*.tpl.html"])
-// 		.pipe(fileinclude({
-// 			basepath: "templates/"
-// 		}).on("error", function(error) {
-// 			console.error(error);
-// 		}))
-// 		.pipe(rename({ extname: "" }))
-// 		.pipe(rename({ extname: ".html" }))
-// 		.pipe(gulp.dest("."))
-// 		.pipe(notify("<%= file.relative %> done!"));
-// });
+gulp.task("html", function() {
+	gulp.src(["**/*.tpl.html"])
+		.pipe(fileinclude({
+			basepath: "templates/"
+		}).on("error", function(error) {
+			console.error(error);
+		}))
+		.pipe(rename({ extname: "" }))
+		.pipe(rename({ extname: ".html" }))
+		.pipe(gulp.dest("."))
+		.pipe(notify({
+			message: "HTML done!",
+			onLast: true
+		}));
+});
 
 gulp.task("watch", function() {
 	//gulp.watch(["../mavo/dist/*"], ["update"]);
 	gulp.watch(["**/*.scss"], ["sass"]);
-	//gulp.watch(["**/*.tpl.html", "./templates/*.html"], ["html"]);
+	gulp.watch(["**/*.tpl.html", "./templates/*.html"], ["html"]);
 });
 
 gulp.task("default", ["sass"]);

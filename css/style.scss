@@ -52,10 +52,14 @@ a {
 	&:hover {
 		text-decoration: underline;
 	}
+
+	p & {
+		color: darken($secondary-color, 15%);
+	}
 }
 
 body > header {
-	padding: 1em 1.5em 1.8em;
+	padding: 1em 0 0;
 	background: linear-gradient(transparent, rgba(0,0,0,.4)),
 	            url("../images/header.jpg") top / cover $secondary-color;
 	color: white;
@@ -79,26 +83,25 @@ body > header {
 		}
 	}
 
-	h1 {
+	.logo {
+		font: inherit;
+		filter: drop-shadow(0 0 .3em rgba(0,0,0,.3));
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	h1.wordmark {
+		display: inline-block;
 		margin: 0;
-		filter: drop-shadow(0 0 .1em rgba(0,0,0,.3));
-
-		.wordmark {
-			display: inline-block;
-			margin-top: .1em;
-			max-width: 100%;
-			background: url(../wordmark.svg) no-repeat top / contain;
-			color: transparent;
-			text-shadow: none;
-			overflow: hidden;
-			font: 900 300%/.8 'Helvetica LT Black', 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
-		}
-
-		img {
-			display: block;
-			height: 4.7em;
-			margin: auto;
-		}
+		margin-top: .1em;
+		max-width: 100%;
+		background: url(../wordmark.svg) no-repeat top / contain;
+		color: transparent;
+		text-shadow: none;
+		overflow: hidden;
+		font: 900 600%/.8 'Helvetica LT Black', 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
 
 		time {
 			font-family: 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
@@ -113,22 +116,28 @@ body > header {
 		line-height: 1;
 	}
 
+	img {
+		display: block;
+		height: 9.5em;
+		margin: auto;
+	}
+
 	@media (max-width: 600px) {
-		hgroup {
+		&:not(.compact) .logo {
 			font-size: 60%;
 		}
 	}
 
 	p {
 		padding: .5em;
-		font: 100%/1.5 $heading-font;
+		font: 100%/1.6 $heading-font;
 
 		@media (min-width: 800px) {
 			position: absolute;
-			top: 0;
-			right: 1rem;
+			top: 1rem;
+			right: 1.5rem;
 			text-align: right;
-			font-size: 150%;
+			font-size: 120%;
 		}
 
 		.place, time {
@@ -137,7 +146,7 @@ body > header {
 			&::before {
 				@include icon;
 				color: $accent-color;
-				margin-right: .4rem;
+				margin-right: .8rem;
 			}
 		}
 
@@ -156,6 +165,79 @@ body > header {
 			}
 		}
 	}
+
+	nav {
+		margin-top: 2em;
+		background: rgba(0,0,0,.4);
+
+		ul {
+			display: flex;
+			padding: 0;
+			list-style: none;
+		}
+
+		li {
+			flex: 1;
+		}
+
+		a {
+			display: block;
+			padding: .3em .5em;
+
+			&:hover {
+				background: $accent-color;
+				text-decoration: none;
+				mix-blend-mode: screen;
+			}
+		}
+
+		.current {
+			box-shadow: 0 .3em black;
+
+			a {
+				box-shadow: 0 .3em $accent-color;
+			}
+		}
+	}
+
+	&.compact {
+		background-position: 50% 15%;
+
+		nav {
+			margin-top: 1em;
+		}
+
+		.logo {
+			display: flex;
+			width: fit-content;
+			margin-left: 2rem;
+		}
+
+		img {
+			height: 4.8em;
+			margin-right: .5em;
+		}
+
+		hgroup {
+			flex: 1;
+			text-align: left;
+			font-size: 65%;
+
+			h1.wordmark {
+				background-position: left;
+			}
+
+			h2 {
+				margin-bottom: 0;
+			}
+		}
+
+		@media (max-width: 800px) {
+			p {
+				display: none;
+			}
+		}
+	}
 }
 
 body > main {
@@ -165,18 +247,36 @@ body > main {
 	align-items: center;
 	padding: 1em;
 
+	& > h1 {
+		padding: 0;
+		color: hsl(200, 40%, 50%);
+		font: 900 450%/1 $body-font;
+	}
+
+	& > h2,
+	& > section > h1 {
+		color: $accent-color;
+		font-size: 220%;
+	}
+
+	section {
+		margin: 1.5em 0;
+	}
+
+	& > section {
+		& > section > h1,
+		& > h2 {
+			font-weight: bold;
+			color: $secondary-color;
+		}
+	}
+
 	& > * {
 		width: 60rem;
 		max-width: 90vw;
-		padding: 1em 0;
 
 		@media (min-width: 1600px) {
 			width: 75rem;
-		}
-
-		& > h1 {
-			color: $accent-color;
-			font-size: 220%;
 		}
 	}
 }
@@ -292,6 +392,10 @@ body > footer {
 		color: white;
 		font: bold 80%/1.5 $body-font;
 		text-transform: uppercase;
+
+		a {
+			color: inherit;
+		}
 	}
 
 	strong, a {
@@ -331,7 +435,14 @@ table {
 
 }
 
-#dates table {
+table.dates {
+	margin: 1em 0;
+
+	caption {
+		color: $accent-color;
+		font: bold 150%/1.5 $heading-font;
+	}
+
 	tbody {
 		td {
 			&:empty::before {
@@ -408,49 +519,48 @@ table {
 	@media (min-width: 1600px) {
 		columns: 3;
 	}
+}
 
-	section {
-		break-inside: avoid; // for the future
-		display: inline-block;  // workaround for lack
-		width: 100%;            // of break-inside support
-		box-sizing: border-box; // in Safari
-		padding: .01em 1em .5em;
-		margin: .6em 0;
-		border-radius: .3em;
-		border: .1em solid change-color($secondary-color, $lightness: 85%);
-		background: change-color($secondary-color, $lightness: 93%);
+#organizers > section,
+section.organizers {
+	break-inside: avoid; // for the future
+	display: inline-block;  // workaround for lack
+	width: 100%;            // of break-inside support
+	box-sizing: border-box; // in Safari
+	padding: .01em 1em .5em;
+	margin: .6em 0;
+	border-radius: .3em;
+	border: .1em solid change-color($secondary-color, $lightness: 85%);
+	background: change-color($secondary-color, $lightness: 93%);
 
-		& > h1 {
-			margin-bottom: .0em;
-			color: $secondary-color;
-			font-size: 120%;
-			font-weight: bold;
+	& > h1 {
+		margin-bottom: .0em;
+		font-size: 120%;
+	}
+
+	a[href^=mailto] {
+		display: block;
+		margin-bottom: .8em;
+		font-weight: 400;
+		color: $secondary-color;
+
+		@keyframes wobble {
+			33.3%  { transform: rotate(10deg); }
+			66.6%  { transform: rotate(-10deg); }
 		}
 
-		a[href^=mailto] {
-			display: block;
-			margin-bottom: .8em;
-			font-weight: 400;
+		&::before {
+			content: "✉";
+			display: inline-block;
+			margin-right: .4em;
+			@include icon;
+			color: $accent-color;
+			animation: wobble .5s infinite paused;
+		}
+
+		&:hover::before {
+			animation-play-state: running;
 			color: $secondary-color;
-
-			@keyframes wobble {
-				33.3%  { transform: rotate(10deg); }
-				66.6%  { transform: rotate(-10deg); }
-			}
-
-			&::before {
-				content: "✉";
-				display: inline-block;
-				margin-right: .4em;
-				@include icon;
-				color: $accent-color;
-				animation: wobble .5s infinite paused;
-			}
-
-			&:hover::before {
-				animation-play-state: running;
-				color: $secondary-color;
-			}
 		}
 	}
 
@@ -475,6 +585,22 @@ table {
 			margin-right: 1em;
 			object-fit: cover;
 			border-radius: 50%;
+		}
+	}
+}
+
+#toc {
+	&.compact {
+		&::before {
+			content: "Jump to section: ";
+		}
+
+		a {
+			display: inline-block;
+			padding: .1em .5em;
+			margin-right: .3em;
+			border-radius: .3em;
+			background: change-color($secondary-color, $lightness: 93%);
 		}
 	}
 }

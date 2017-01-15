@@ -1,42 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" vocab="http://schema.org" prefix="og: http://ogp.me/ns#">
-<head>
-
-<meta charset="UTF-8">
-<title>UIST 2017: 30th ACM User Interface Software and Technology Symposium</title>
-<base href="/uist2017/" />
-<meta name="viewport" content="width=device-width">
-<link rel="stylesheet" href="css/style.css">
-<link rel="shortcut icon" href="logo.svg">
-<!-- <link rel="canonical" href="https://uist.acm.org/uist2017/"> -->
-
-<meta property="og:image" content="https://uist.acm.org/uist2017/images/fb.jpg" />
-
-</head>
-<body typeof="Event">
-
-<header >
-	<a href="/uist2017" class="logo">
-		<img src="logo.svg" height="100" alt="Logo: Pixelated masochist teapot" property="image">
-		<hgroup>
-			<h1 class="wordmark">UIST<time>2017</time></h1>
-			<h2 property="name">30th ACM User Interface Software and Technology Symposium</h2>
-		</hgroup>
-	</a>
-
-	<p>
-		<span class="place" property="location">Quebec City, Canada</span>
-		<time datetime="2017-10-22" property="startDate">October 22-25, 2017</time>
-	</p>
-	<nav>
-		<ul>
-			<li><a href="cfp">CFP</a></li>
-			<li><a href="#dates">Dates</a></li>
-			<li><a href="#organizers">Organizers</a></li>
-		</ul>
-	</nav>
-</header>
-
+@@include("_head.html", {
+	"title": "UIST 2017: 30th ACM User Interface Software and Technology Symposium",
+	"compact": false
+})
 
 <main>
 	<section id="welcome">
@@ -334,30 +299,7 @@
 	</section>
 </main>
 
-<footer>
-	<div>
-		&copy; <a href="http://www.sigchi.org">ACM SIGCHI</a> 2017
-		<small>Header photo credits: <a href="https://www.flickr.com/photos/junksnowgirl/30161358185/">flickr.com/photos/junksnowgirl/30161358185</a></small>
-	</div>
-	<div class="social">
-		<a title="Facebook" href="https://www.facebook.com/ACMUIST" target="_blank">
-			f
-		</a>
-		<a title="Twitter" href="https://twitter.com/ACMUIST" target="_blank">
-			🐦
-		</a>
-		<a title="YouTube" href="https://www.youtube.com/user/acmsigchi/playlists?view=50&sort=dd&shelf_id=6" target="_blank">
-			📽
-		</a>
-		<a title="Flickr" href="https://www.flickr.com/photos/acmuist/" target="_blank">
-			📷
-		</a>
-		<a title="Github" href="https://github.com/leaverou/uist2017" target="_blank">
-			🐱
-		</a>
-	</div>
-</footer>
-
+@@include('_footer.html')
 
 <script src="js/bliss.min.js"></script>
 <script src="js/index.js"></script>
