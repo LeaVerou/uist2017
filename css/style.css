@@ -190,7 +190,10 @@ body > main {
   body > main > h1 {
     padding: 0;
     color: #4d91b3;
-    font: 900 450%/1 Lato, Helvetica Neue, sans-serif; }
+    font: 900 300%/1 Lato, Helvetica Neue, sans-serif; }
+    @media (min-width: 500px) {
+      body > main > h1 {
+        font-size: 450%; } }
   body > main > h2,
   body > main > section > h1 {
     color: #ff2b00;
@@ -437,12 +440,13 @@ section.organizers {
   margin-bottom: 1em;
   background: #f1f6f9;
   box-shadow: -50vw 0 #f1f6f9, 50vw 0 #f1f6f9; }
-  #toc.compact::before {
-    content: "Jump to section: ";
-    text-transform: uppercase;
-    font-size: 80%;
-    font-weight: 900;
-    color: #4d91b3; }
+  @media (min-width: 500px) {
+    #toc.compact::before {
+      content: "Jump to section: ";
+      text-transform: uppercase;
+      font-size: 80%;
+      font-weight: 900;
+      color: #4d91b3; } }
   #toc.compact a {
     display: inline-block;
     padding: .1em .5em;

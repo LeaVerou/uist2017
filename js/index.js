@@ -56,3 +56,5 @@ if (toc) {
 		toc.appendChild(a.cloneNode(true));
 	});
 }
+
+// TODO Highlight current menu item

@@ -282,7 +282,11 @@ body > main {
 	& > h1 {
 		padding: 0;
 		color: hsl(200, 40%, 50%);
-		font: 900 450%/1 $body-font;
+		font: 900 300%/1 $body-font;
+
+		@media (min-width: 500px) {
+			font-size: 450%;
+		}
 	}
 
 	& > h2,
@@ -631,12 +635,14 @@ section.organizers {
 		background: $bg;
 		box-shadow: -50vw 0 $bg, 50vw 0 $bg;
 
-		&::before {
-			content: "Jump to section: ";
-			text-transform: uppercase;
-			font-size: 80%;
-			font-weight: 900;
-			color: $secondary-color;
+		@media (min-width: 500px) {
+			&::before {
+				content: "Jump to section: ";
+				text-transform: uppercase;
+				font-size: 80%;
+				font-weight: 900;
+				color: $secondary-color;
+			}
 		}
 
 		a {
