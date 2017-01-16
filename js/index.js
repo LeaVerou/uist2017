@@ -1,14 +1,14 @@
 if (new Date().getFullYear() <= 2017 && $("table.dates")) {
 	$.include("js/countdown.js").then(function(){
 		$$("table.dates").forEach(function(datesTable) {
-			let times = $$("time", datesTable);
+			var times = $$("time", datesTable);
 
-			for (let time of times) {
-				let td = time.closest("td");
-				let date = new Date(time.getAttribute("datetime"));
-				let diff = time._.data.diff = time._.data.diff || new CountDown(date);
+			for (var time of times) {
+				var td = time.closest("td");
+				var date = new Date(time.getAttribute("datetime"));
+				var diff = time._.data.diff = time._.data.diff || new CountDown(date);
 
-				let countdown = time.nextElementSibling || $.create("em", {
+				var countdown = time.nextElementSibling || $.create("em", {
 					className: "countdown",
 					after: time
 				});
@@ -57,4 +57,18 @@ if (toc) {
 	});
 }
 
-// TODO Highlight current menu item
+// Highlight current menu item
+function isCurrentURL(url) {
+	return (!url.hash || url.hash == location.hash)
+		&& url.pathname.replace(/\/$/, "") == location.pathname.replace(/\/$/, "")
+		&& url.origin == location.origin;
+}
+
+function highlightCurrentItem() {
+	$$("nav li a").forEach(function(a) {
+		a.parentNode[(isCurrentURL(a)? "set" : "remove") + "Attribute"]("aria-current", "page");
+	});
+}
+
+highlightCurrentItem();
+addEventListener("hashchange", highlightCurrentItem);

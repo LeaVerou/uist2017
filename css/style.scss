@@ -130,6 +130,7 @@ body > header {
 		margin-top: .1em;
 		width: 4.2em;
 		max-width: 100%;
+		max-width: calc(100% - .4em);
 		font: 900 600%/.8 'Helvetica LT Black', 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
 
 		img {
@@ -218,7 +219,7 @@ body > header {
 			}
 		}
 
-		.current {
+		[aria-current] {
 			box-shadow: 0 .3em black;
 
 			a {

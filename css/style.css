@@ -84,6 +84,7 @@ body > header {
     margin-top: .1em;
     width: 4.2em;
     max-width: 100%;
+    max-width: calc(100% - .4em);
     font: 900 600%/.8 'Helvetica LT Black', 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif; }
     body > header h1.wordmark img {
       width: 100%; }
@@ -141,9 +142,9 @@ body > header {
         background: #ff2b00;
         text-decoration: none;
         mix-blend-mode: screen; }
-    body > header nav .current {
+    body > header nav [aria-current] {
       box-shadow: 0 .3em black; }
-      body > header nav .current a {
+      body > header nav [aria-current] a {
         box-shadow: 0 0.3em #ff2b00; }
   body > header.compact {
     background-position: 50% 15%; }
