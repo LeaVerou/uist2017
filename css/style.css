@@ -52,7 +52,7 @@ a {
   p a {
     color: #3d748f; }
     p a[href^="http://"]::after, p a[href^="https://"]::after {
-      content: "️ ↗️️"; }
+      content: " ↗️"; }
 
 body > header {
   padding: 1em 0 0;
@@ -82,21 +82,17 @@ body > header {
     display: inline-block;
     margin: 0;
     margin-top: .1em;
+    width: 4em;
     max-width: 100%;
-    background: url(../wordmark.svg) no-repeat top/contain;
-    color: transparent;
-    text-shadow: none;
-    overflow: hidden;
+    max-width: calc(100% - .5em);
     font: 900 600%/.8 'Helvetica LT Black', 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif; }
-    body > header h1.wordmark time {
-      font-family: 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
-      font-weight: 300;
-      letter-spacing: -.02em; }
+    body > header h1.wordmark img {
+      width: 100%; }
   body > header h2 {
     font: inherit;
     font-size: 90%;
     line-height: 1; }
-  body > header img {
+  body > header img[property=image] {
     display: block;
     height: 9.5em;
     margin: auto; }
@@ -161,7 +157,7 @@ body > header {
       width: -moz-fit-content;
       width: fit-content;
       margin-left: 2rem; }
-    body > header.compact img {
+    body > header.compact img[property=image] {
       height: 4.8em;
       margin-right: .5em; }
     body > header.compact hgroup {

@@ -84,7 +84,7 @@ a {
 		&[href^="http://"],
 		&[href^="https://"] {
 			&::after {
-				content: "️ ↗️️";
+				content: " ↗️";
 			}
 		}
 	}
@@ -128,17 +128,13 @@ body > header {
 		display: inline-block;
 		margin: 0;
 		margin-top: .1em;
+		width: 4em;
 		max-width: 100%;
-		background: url(../wordmark.svg) no-repeat top / contain;
-		color: transparent;
-		text-shadow: none;
-		overflow: hidden;
+		max-width: calc(100% - .5em);
 		font: 900 600%/.8 'Helvetica LT Black', 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
 
-		time {
-			font-family: 'Helvetica Neue', Helvetica, Arial, Lato, sans-serif;
-			font-weight: 300;
-			letter-spacing: -.02em;
+		img {
+			width: 100%;
 		}
 	}
 
@@ -148,7 +144,7 @@ body > header {
 		line-height: 1;
 	}
 
-	img {
+	img[property=image] {
 		display: block;
 		height: 9.5em;
 		margin: auto;
@@ -245,7 +241,7 @@ body > header {
 			margin-left: 2rem;
 		}
 
-		img {
+		img[property=image] {
 			height: 4.8em;
 			margin-right: .5em;
 		}
