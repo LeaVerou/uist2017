@@ -2,12 +2,14 @@ This is the repo for the [ACM UIST 2017 website](https://uist.acm.org/uist2017/)
 
 ## Editing
 
-Before making any edits:
+To setup the build tools:
 
 - First, install Node and npm if you don't already have it
 - `cd` to the website folder and run `npm install`
 
 After that, run `gulp watch` before you make any edits, and it will automatically generate any files needed.
+
+If this seems like too much hassle don't worry, just make a pull request with your edits and I will run gulp on them myself.
 
 ## Editing the HTML
 
