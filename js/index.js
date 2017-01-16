@@ -60,8 +60,7 @@ if (toc) {
 // Highlight current menu item
 function isCurrentURL(url) {
 	return (!url.hash || url.hash == location.hash)
-		&& url.pathname.replace(/\/$/, "") == location.pathname.replace(/\/$/, "")
-		&& url.origin == location.origin;
+		&& url.pathname.replace(/\/$/, "") == location.pathname.replace(/\/$/, "");
 }
 
 function highlightCurrentItem() {
