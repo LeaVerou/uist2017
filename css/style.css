@@ -52,7 +52,8 @@ a {
   p a {
     color: #3d748f; }
     p a[href^="http://"]::after, p a[href^="https://"]::after {
-      content: " ↗️"; }
+      content: " ↗️";
+      color: #4d91b3; }
 
 body > header {
   padding: 1em 0 0;

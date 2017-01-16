@@ -85,6 +85,7 @@ a {
 		&[href^="https://"] {
 			&::after {
 				content: " ↗️";
+				color: $secondary-color; // for single color emoji
 			}
 		}
 	}
