@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Arvo:400,700|Lato:300,400,700,900&subset=latin-ext");
-body > main > section > section > h2, body > main > section > section > section h1, #welcome h1 {
+body > main > section > section h2, body > main > section > section section h1, #welcome h1 {
   float: left;
   padding: .3em .5em;
   border-radius: .3em;
@@ -9,7 +9,7 @@ body > main > section > section > h2, body > main > section > section > section 
   color: white;
   font: bold 80%/1.2 Lato, Helvetica Neue, sans-serif;
   text-transform: uppercase; }
-  body > main > section > section > h2 a, body > main > section > section > section h1 a, #welcome h1 a {
+  body > main > section > section h2 a, body > main > section > section section h1 a, #welcome h1 a {
     color: inherit; }
 
 @font-face {
@@ -201,11 +201,12 @@ body > main {
   body > main > section > section > h1,
   body > main > section > h2 {
     font-weight: bold;
-    color: #4d91b3; }
-  body > main > section > section > h2, body > main > section > section > section h1 {
+    color: #4d91b3;
+    margin-top: 1.2em; }
+  body > main > section > section h2, body > main > section > section section h1 {
     margin-top: 1.2em;
     background: #82b2c9; }
-    body > main > section > section > h2 + p, body > main > section > section > section h1 + p {
+    body > main > section > section h2 + p, body > main > section > section section h1 + p {
       margin-top: 1em; }
   body > main > * {
     width: 60rem;
@@ -433,7 +434,7 @@ section.organizers {
       object-fit: cover;
       border-radius: 50%; }
 
-#toc.compact {
+#toc {
   padding: .8em 0;
   margin-bottom: 1em;
   background: #f1f6f9;
@@ -456,5 +457,19 @@ section.organizers {
       background: #4d91b3;
       color: #d2e3ec;
       text-decoration: none; }
+  @media (min-width: 800px) {
+    #toc:not(.compact) {
+      -moz-column-count: 2;
+      column-count: 2; } }
+  #toc:not(.compact)::before {
+    content: "On this page";
+    display: block;
+    font-weight: 900;
+    font-size: 150%;
+    color: #4d91b3;
+    -moz-column-span: all;
+    column-span: all; }
+  #toc:not(.compact) a {
+    display: block; }
 
 /*# sourceMappingURL=style.css.map */

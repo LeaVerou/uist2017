@@ -301,16 +301,17 @@ body > main {
 		& > h2 {
 			font-weight: bold;
 			color: $secondary-color;
+			margin-top: 1.2em;
 		}
 
 
-		& > section > {
+		& > section {
 			h2, section h1 {
 				@extend %inline-heading;
 				margin-top: 1.2em;
 				background: tint($secondary-color, 30%);
 
-				& + p {
+				& + p  {
 					margin-top: 1em;
 				}
 			}
@@ -625,13 +626,13 @@ section.organizers {
 }
 
 #toc {
-	&.compact {
-		padding: .8em 0;
-		margin-bottom: 1em;
-		$bg: tint($secondary-color, 92%);
-		background: $bg;
-		box-shadow: -50vw 0 $bg, 50vw 0 $bg;
+	padding: .8em 0;
+	margin-bottom: 1em;
+	$bg: tint($secondary-color, 92%);
+	background: $bg;
+	box-shadow: -50vw 0 $bg, 50vw 0 $bg;
 
+	&.compact {
 		@media (min-width: 500px) {
 			&::before {
 				content: "Jump to section: ";
@@ -655,6 +656,25 @@ section.organizers {
 				color: tint($secondary-color, 75%);
 				text-decoration: none;
 			}
+		}
+	}
+
+	&:not(.compact) {
+		@media (min-width: 800px) {
+			column-count: 2;
+		}
+
+		&::before {
+			content: "On this page";
+			display: block;
+			font-weight: 900;
+			font-size: 150%;
+			color: $secondary-color;
+			column-span: all;
+		}
+
+		a {
+			display: block;
 		}
 	}
 }

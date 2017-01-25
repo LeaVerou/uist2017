@@ -1,0 +1,193 @@
+@@include("_head.html", {
+	"title": "UIST 2017 Video Guide | UIST 2017",
+	"compact": true
+})
+
+<h1>UIST 2017 Author Guide</h1>
+
+<section id="toc"></section>
+
+<section>
+	<h1>Introduction</h1>
+	<p>UIST features papers, demos, and posters, as described in the Call for Participation. While the material in this guide is primarily oriented towards paper authors, its general emphasis on quality and stringent review is also applicable to authors of demo and poster submissions. Accepted papers will be presented during three days of technical sessions at the conference and published in the conference proceedings.
+
+
+</section>
+
+<section>
+	<h1>UIST Requires Novel Manuscripts</h1>
+	<p>Paper submissions must not have been published previously in the English language. A paper is considered to have been previously published if it has appeared in a peer-reviewed journal or conference proceedings that is reliably and permanently available afterward in print or electronic form to non-attendees. This includes papers that are reviewed only as abstracts, but are published as a complete paper.
+	<p>The paper cannot be considered a novel manuscript if it reports an incremental update or a small improvement to a previously published work. Although a paper can be based on an earlier archival publication by its authors, significant new developments and findings have to be reported for the paper to be considered a novel manuscript. As a rule of thumb, a paper has to include about 70% new material to be considered a novel contribution. We also encourage the authors to submit a complete work rather than dividing it into smaller pieces.
+	<p>For UIST submission purposes, a paper is not considered to have been previously published if it was presented earlier in forms explicitly labeled as “non-archival,” even if they are, in fact archived. Such non-archival forms include, for example, CHI extended abstracts (including alt.chi, works-in-progress, posters, demos, etc.), the SIGGRAPH Emerging Technology venue, and UIST posters and demos. Work that builds on previous non-archival work should typically contain at least 30% new material. However, authors must cite this previous non-archival work in their new submission. If you are unsure about whether something is considered archival, please contact <a href="mailto:program2017@uist.org" target="_blank">program2017@uist.org</a>. Authors wishing to submit work containing substantial portions of work published elsewhere also need to check their copyright agreement with the original publisher to make sure that this is permissible according to that agreement.
+</section>
+
+<section>
+	<h1>Re-Publication of Work in English that was Previously Published in Another Language</h1>
+	<p>English is considered the international language of ACM SIGCHI and its journals and conferences. Work that has previously been presented or published in a language other than English may be translated and presented or published in English in SIGCHI journals and conferences insofar as ACM SIGCHI is concerned. The original author should typically also be the author (or co-author) of work translated into English, and it should be made clear that this is, in fact, a translation; the original non-English work should be referenced. We encourage authors whose work was originally published in languages other than English to publish their work in English if they feel that work is of sufficient relevance and quality to be useful to a wide international audience. Of course, it is not acceptable to translate the original work of another author and present it as one’s own. Authors wishing to publish in English a work originally published in non-English also need to check their copyright agreement with the original publisher to make sure that publishing the work in English is permissible according to that agreement.
+</section>
+
+<section>
+	<h1>UIST Supports Sharing Preliminary Work</h1>
+	<p>UIST sees significant value in sharing early work through posters, demos, and informal venues like technical reports. UIST strongly encourages the submission of exciting, early research as a UIST poster or demo. Sharing preliminary research through these short, lightly reviewed work-in-progress or extended-abstract types of venues does not inhibit subsequent publication at UIST, provided that the UIST submission makes an important contribution beyond the previous, shorter document. Such documents, which typically appear in the adjunct proceedings, are not considered prior publications, and thus do not preclude submission of a paper on the same topic by the same authors. Prior work should, of course, be referenced appropriately.
+</section>
+
+<section>
+	<h1>Concurrent Submission is PROHIBITED</h1>
+	<p>A paper identical or substantially similar to (or even a subset or superset of) a paper submitted to UIST must not be simultaneously under consideration at another conference or journal during the entire duration of the UIST review process (i.e., from the submission deadline until the notification of decisions are emailed to authors). This restriction applies even if the overlap in review timelines between UIST and another venue is just a few days or even a few hours, and even if it is your intent to withdraw the submission from the other venues at the moment it is accepted by one of them. This restriction also applies even if the other venues do allow concurrent submissions. UIST reviewers are often familiar with the papers under review at other related conferences and journals; as such, submissions that are substantially similar run the risk of being rejected by UIST and the other venues on the grounds of duplication alone.
+</section>
+
+<section>
+	<h1>Revision for Journals is Encouraged</h1>
+	<p>You are encouraged to submit a revised and extended version of your UIST paper to a journal such as ACM Transactions on Computer-Human Interaction or Human-Computer Interaction after it has been presented at the UIST conference.
+</section>
+
+<section>
+	<h1>Anonymous Submission Process</h1>
+	<p>Paper submissions are anonymous. You are required to make a reasonable effort to purge identifying information from your submission:
+
+	<h2>What does “anonymous” mean for UIST submissions?</h2>
+	<p>Primarily -- as with CHI -- it means that submissions must remove all author and institutional information from the title and header area of the first page of the paper. Author information should also be removed from submitted supplementary materials, in particular, videos. Submissions that do not do so may be rejected without review.
+	<p>Furthermore, <strong>all references must remain intact</strong>. If you previously published a paper and your current submission builds on that work, <strong><u>the complete reference with author's name must appear in the references</u></strong>. Authors must refer to their previous work in the third person (e.g., “We build on prior work by Smith et al. [X] but generalize their algorithm to new settings.”) and avoid blank references (e.g., “12. REMOVED FOR REVIEWING”). Further suppression of identity in the body of the paper (for example, in an Acknowledgements section), while encouraged, is left to the authors’ discretion.
+	<h2>What if the work I am writing about is widely publicized already (e.g., a website, an application, or a performance)?</h2>
+	<p>While the details of anonymization in the body of the paper are ultimately left to the authors’ discretion, we understand that some work is difficult (or impossible) to anonymize without degrading the quality of the writing. In these cases, we encourage the authors to ensure that details relevant for review of this paper are included.
+	<h2>Am I allowed to publicize my work while the review process is ongoing?</h2>
+	<p>While publicizing and promoting work during the review process goes against the spirit of anonymous review, we understand that there are competing interests that make publicity important. The UIST community has agreed that such publicity should not be explicitly prohibited or penalized. However, we encourage authors to wait until the review process is over to publicize their work.
+	<h2>Why did UIST adopt this particular strategy of lightweight anonymization?</h2>
+	<p>UIST has a long tradition of excellent, thoughtful reviewing. This policy seeks to balance two goals. The first goal is to emphasize for all parties involved that reviews assess the content of a submission, not its authors. This is why names must be omitted from the masthead and reasonable efforts to maintain anonymity in the body of the paper should be taken. The second goal is to encourage papers that clearly explain the research. Sometimes doing so requires (at least implicitly) disclosing information about the authors or an institution. If you have comments or questions about this policy, please email <a href="mailto:program2017@uist" target="_blank">program2017@uist.org</a>. The rules stated here apply to papers only. Submissions to the Posters, Demos, and Doctoral Symposium tracks should follow the anonymization guidelines in the respective calls for those tracks.
+
+
+	<h2>The Reviewing Process</h2>
+	<p>The UIST review process is confidential and the confidentiality of submissions is maintained from their submission to their publication date. See the UIST 2017 <a href="cfp" target="_blank">Call for Participation</a> for relevant dates.
+	<p>The Program Committee and a set of external reviewers, both consisting of recognized experts, will review submitted papers. Then, at their Program Committee (PC) meeting (June 23-24, 2017), the committee will select those papers to be presented at UIST 2017. For 2017, the Committee will be using the following process:
+	<ul>
+		<li>
+			<strong>1AC and 2AC Assignment:</strong> In the week following the submission deadline, the Program Chairs will assign each submitted paper to a primary reviewer (1AC) and a secondary reviewer (2AC) who are both members of the Program Committee. Papers that are inappropriate may be rejected during this assignment process without being sent to a primary reviewer. Papers will normally be rejected at this stage only if they are clearly off-topic for UIST, if they are incomplete, if they violate rules of this Author’s Guide, or if they are discovered to have been published previously or to have been submitted concurrently at another conference or journal.
+		</li>
+		<li>
+		<strong>Desk Rejections:</strong> The primary reviewer may, upon conferring with the secondary reviewer and the Program Chairs, recommend a paper be rejected without additional review. A paper will normally be rejected at this stage only if it falls into one of the categories listed above, but that fact was not detected during the initial paper assignment. It is possible, although unlikely, that a paper may also be rejected at this stage if it solves a problem that is known to be solved already; or if it does not cite (and the authors seem unaware of) important prior work on the same problem and doesn't address how it is different; or if it has no evaluation via proof, experiment, or analysis when such is required; if it is solving a problem sufficiently minor that the senior reviewers do not believe that it belongs in the program; if its overall level of quality is clearly not appropriate for UIST; or if it addresses a topic that is clearly outside the purview of UIST.
+		</li>
+		<li>
+		<strong>External Reviewer Assignment:</strong> The primary reviewer distributes each paper to two additional experts, called external reviewers. The secondary reviewer also distributes the paper to one additional external reviewer. Thus, each paper submitted for review will be seen by five different people. This assignment process aims to reduce the impact of any single person on the final outcome for the paper by letting two different people (the 1AC and 2AC) assign external reviewers.
+		</li>
+		<li>
+		<strong>Reviews before Rebuttal:</strong> The three external reviewers will write full reviews. Thus, at least three full reviews will be written for each submission. The primary reviewer knows the identities of the authors of the papers, but the external reviewers do not. The 1AC will summarize the external reviewer sentiment in the meta-review section of their review. If there is substantial disagreement among the external reviewers, the 1AC will prepare a full review of the paper.
+		</li>
+		<li>
+		<strong>Discussion before Rebuttal:</strong> Between the review submissions and rebuttal phases, the 1AC may elect to begin a discussion amongst the reviewers (ACs and externals) to clarify reviews and strive for consensus.
+		</li>
+		<li>
+		<strong>Rejection Threshold:</strong> After the primary and external reviewers complete their reviews, any paper for which all reviews fall below a threshold will be rejected. These papers will not have a rebuttal or be discussed at the PC meeting. The 2AC will then prepare a review for papers above the threshold, but it can be very short (e.g., "This is great work, reviewers are all positive and I recommend acceptance"). Authors of the rejected papers will receive notifications at this point and can submit the work to other venues. Authors of all papers that are above the rejection threshold will have a chance to write a rebuttal.
+		</li>
+		<li>
+		<strong>Rebuttal:</strong> After the 3 external and two primary reviews are complete, reviews will be distributed to authors. Authors will have 7 days to submit a rebuttal if they feel that the reviewers have made substantive or factual errors, to clarify concerns or uncertainties, or to answer specific questions raised by the reviewers. We encourage the submission of a rebuttal regardless of the scores that authors receive in case the concerns of reviewers come up in discussion at the Program Committee meeting. The rebuttal period will be from June 9 through June 16, 2017. The rebuttal is confined to 5000 characters in length and must be self-contained. The rebuttal is for addressing factual errors in the reviews, for responding to specific questions for clarification raised by reviewers, or include any novel material as long as it can be fit into the 5000 test characters of the rebuttal. External links, e.g., to video material, are not allowed unless explicitly requested by an AC. Since the external reviewers do not know the names of the authors, the authors should maintain their anonymity in their rebuttals.
+		</li>
+		<li>
+		<strong>Post-Rebuttal Discussion Stage:</strong> Between the end of the rebuttal submission and Program Committee meeting, the reviewers (ACs and externals) will read the authors’ rebuttals, confer about the papers, and prepare a recommendation for the committee meeting on June 23, 2017. Since the external reviewers do not know the authors’ and each other's identities, they must maintain anonymity during any online discussion. The preliminary recommendation agreed on at this stage will be either accept, reject, or if agreement on a recommendation cannot be reached, a third option is to table the paper for further review and discussion.
+		</li>
+		<li>
+		<strong>Post-Rebuttal Meta Reviews:</strong> After the rebuttal and discussion, the primary reviewer will have a chance to revise the meta-review, taking into account the rebuttal. In some cases, a third reviewer from the Program Committee may be assigned based on requests by the 1AC and 2AC.
+		</li>
+		<li>
+		<strong>Program Committee Meeting:</strong> The full Program Committee meets June 23-24, 2017, to determine acceptance or rejection of each paper. In cases where a consensus on a paper was not reached during the pre-meeting discussion phase, additional committee members may read the paper, and their evaluations will be taken into account in the decision.
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h1>Possible Outcomes for a Paper</h1>
+	<p>Email notifications of the Program Committee’s decisions should be sent no later than June 26, 2017. Full reviews, which may have changed due to the rebuttal, online discussion, or discussion at the committee meeting, will be sent by June 30, 2017. The notifications will place each paper in one of the following two categories:
+	<ul>
+		<li><strong>Rejected</strong></li>
+		<li><strong>Conditionally accepted</strong></li>
+	</ul>
+	<p><strong>Conditionally accepted papers</strong> undergo a second review process in which a referee (an associate chair of the Program Committee) verifies that the final version of the paper is acceptable (that any required changes have been made, and that other changes made by the authors, perhaps in response to reviewer comments, have not compromised the paper in any way). The length of the camera-ready copy (rounded up to the nearest page) must be less than or equal to the length of the original submission unless there is a strong justification to increase the length of the manuscript, which should be agreed upon by the primary reviewer. This second and final stage determines the final acceptance status of all papers. The referees’ decisions are final. Papers that do not satisfy the referees in the second stage of review and/or that are not uploaded in final form by the final deadline of July 26, 2017, together with the original or revised versions of the submitted supplementary material, will be rejected. Accepted papers will appear in the conference proceedings.
+</section>
+
+<section>
+	<h1>Types of Contribution</h1>
+	<p>There are many types of valid contributions to UIST, including new algorithms, techniques, systems, tools, hardware, devices, models, and applications. We will do our best to ensure reviewers understand that there are many ways for a paper to make a significant contribution to UIST, and that papers should be reviewed according the nature of their contributions. In particular, our community has identified systems and applications papers as particularly challenging to write and evaluate. For authors and reviewers of such papers, we recommend consulting articles written on how to evaluate systems research and how to write systems papers:
+	<p>Levin, Roy, and David D. Redell. <a href="https://www.usenix.org/legacy/event/samples/submit/advice.html" target="_blank">How (and How Not) to Write a Good Systems Paper</a>. ACM SIGOPS Operating Systems Review 17.3 (1983): 35-40.
+	<p>Olsen, D. R. 2007. <a href="http://icie.cs.byu.edu/paperPDFs/EvaluatingSystems.pdf" target="_blank">Evaluating Interface Systems Research</a>. In Proceedings of the 20th Annual ACM Symposium on User interface Software and Technology. UIST '07. ACM, 251-258.
+	<p>Another topic of discussion within our community has been the role of empirical evaluations within HCI research, specifically user testing. While user testing is not strictly required for UIST papers, authors should be careful not to make unsubstantiated claims for new techniques, systems, or applications which have not been tested. In general, authors and reviewers should consider what the appropriate method of validation is for the specific problem or research questions that their paper is addressing. For more advice on this topic, we recommend the following article:
+	<p>Greenberg, S. and Buxton, B. 2008. <a href="http://dl.acm.org/citation.cfm?id=1357074" target="_blank">Usability evaluation considered harmful (some of the time)</a>. In Proceeding of the Twenty-Sixth Annual SIGCHI Conference on Human Factors in Computing Systems. CHI '08. ACM, 111-120.
+</section>
+
+<section>
+	<h1>Supporting Video Material</h1>
+	<p>See also the <a href="video-guide" target="_blank">video guide</a>. Since user interfaces are inherently interactive, authors are encouraged to include a video figure with their papers, which will be kept confidential during the review process. As with the rest of the paper, video figures should be anonymized. Authors should make video figures short and accessible without being misleading. A video should give the same impression as a live demo. For example, a long computational pause can only be removed if its absence is made obvious through techniques such as a visual dissolve and a clear indication (verbal and/or visual) of how much time was removed. Videos about technology mock-ups should be clearly indicated as such. Mock-ups should be avoided when the video is about an implemented system. The video figure accompanying a submission for review is used only to help reviewers evaluate the submissions. Acceptable videos can be made without expensive production or special effects. A camcorder, tripod, and some planning can help guide viewers’ attention. A smooth zoom into the interaction area and then out to the full screen is often much more effective than a static screenshot. Show how the user manipulates an input device if that is relevant. Supporting video need not be stand-alone, because the reviewers will have the paper. Although the paper should be understandable without the video, the paper may include images from the video. For example, authors may use video sequences as figures showing actual use of the proposed system to give readers and reviewers an impression of how the interaction unfolds like and/or how users responded to using the presented system. As video figures will be included with the paper in the ACM digital library, authors may assume that everyone who has the video has the paper, and vice versa. The burden is on the authors to ensure that videos figures are rendered in file formats and codecs that are accessible on all common platforms. Please see the video guide for more details.
+</section>
+
+<section>
+	<h1>Format</h1>
+	<p>All paper submissions must be made in the <strong>2014</strong> version of the <a href="http://www.sigchi.org/publications/chipubform" target="_blank">SIGCHI papers format</a>. (Note that this format utilizes the “Lastname, F.M.” author-name reference style, not the more recent “Firstname M. Lastname” convention employed at the CHI conference.) Submitted papers may also include page numbers so the reviewers can more easily refer to portions. Detailed format instructions are available at the <a href="http://www.sigchi.org/publications/chipubform" target="_blank">SIGCHI conference publication format site</a>. Submissions must be in PDF format, and video submissions must be in one of the approved file formats. Submission details can be found at the <a href="http://www.precisionconference.com/~sigchi" target="_blank">UIST Electronic Submission site (http://www.precisionconference.com/~sigchi)</a>.
+</section>
+
+<section>
+	<h1>Copyright</h1>
+	<p>Authors have the option to choose the level of rights management they prefer. ACM offers three different options for authors to manage the publication rights to their work. Please consult the ACM Authors Site (<a href="http://authors.acm.org/" target="_blank">http://authors.acm.org/</a>). The <a href="https://chi2017.acm.org/wp/sigchi-submitter-agreement/" target="_blank">SIGCHI Submitter Agreement</a> also requires that authors hold copyright to the content of their submission, and will obtain appropriate permissions for any portions of the content that are copyrighted by others.
+</section>
+
+<section>
+	<h1>History</h1>
+	<p>This document was last updated in December 2015 by Jacob O. Wobbrock and Daniel Avrahami, who inherited it from Tovi Grossman and Bjoern Hartmann, who inherited it from Mira Dontcheva and Daniel Wigdor, who inherited it from Ivan Poupyrev and Takeo Igarashi, who inherited it from Hrvoje Benko and Celine Latulipe, who inherited it from Maneesh Agrawala and Scott Klemmer (who used material provided by Saul Greenberg), who inherited it from Francois Guimbretiere, who inherited it from Michel Beaudouin-Lafon, who inherited it from Ravin Balakrishnan and Chia Shen, who inherited it from Ken Hinckley and Pierre Wellner, who inherited it from Dan Olsen, who inherited it from Steve Feiner, who inherited it from Joe Konstan, who inherited it from Michel Beaudouin-Lafon, who inherited it from Ari Rapkin, who inherited it from Beth Mynatt, who inherited it from George Robertson, who inherited it from Marc H. Brown, who inherited it from George Robertson, who got lots of help on it from Steve Feiner, Brad Myers, Jock Mackinlay, Mark Green, Randy Pausch, Pierre Wellner, and Beth Mynatt.
+</section>
+
+<section id="advice">
+	<h1>Advice for a Successful UIST Submission</h1>
+	<p>A good UIST submission will result in both a respectable document for the proceedings and a good conference talk. As an author, you should ask yourself the following questions before writing your paper. Submissions that do not provide good answers to these questions are unlikely to be accepted.
+
+
+	<h2>What problem are you solving, or opportunity are you seizing?</h2>
+	<p>There is no point in publishing a paper unless it presents a solution to a problem, or the taking advantage of a new opportunity or capability. Try to state all your constraints and assumptions. This is an area where it can be invaluable to have someone not intimately familiar with your work read your paper. The abstract should succinctly present what you did in the work and what you found as a result. The introduction should include a crisp description of the problem or opportunity, why it matters, and an overview of the approach you took. The choice of reviewers for the paper is based heavily on the answer to this question.
+
+
+	<h2>What were the previous solutions?</h2>
+	<p>What are the relevant published works in your problem area? What deficiencies in their solutions are you trying to overcome? How does the new solution differ from previously published results? How does it differ from commercial or other publicly available solutions?
+	<p>Do not expect the reviewers to know this information without your telling them in the paper, as they are unlikely to remember the precise details of all the relevant literature. Make specific comparisons between your work and that described in the references; don't just compile a list of vaguely related papers. Poorly written discussions of related work can lead to paper rejection.
+
+
+	<h2>How well did you solve your problem?</h2>
+	<p>Based on your problem statement, what did you accomplish? You are responsible for demonstrating that the problem is solved. Include pictures, statistics, or whatever is required to make your case. If you find this part of the paper difficult to write, perhaps the work is not yet finished and the paper should be deferred until next year.
+
+
+	<h2>What does this work contribute to the field?</h2>
+	<p>What are your new ideas or results? If you don't have at least one new idea, you don't have a publishable paper. Can your results be applied anywhere outside of your project? If not, the paper is probably too special-purpose for UIST. On the other hand, beware of trying to write a paper with too large a scope. Often the best papers are very specific in what they provide so as to deliver a concrete solution, and yet that solution has the power to generalize to other instances, situations, use cases, etc.
+
+
+	<h2>Is the paper complete?</h2>
+	<p>The question that generates the most discussion at the Program Committee meeting is whether a paper is complete. If the paper presents an algorithm or technique, an experienced practitioner in the field should be able to implement it using the paper and its references. If the paper claims to present a faster or more efficient way of implementing an established technique, it must contain enough detail to redo the experiment on competing implementations. When you quote numbers, be sure that they do not lie; state clearly whether they were measured, simulated, or derived, and how you did the measurements, simulations, or derivations. For example, CPU time measurements are meaningless unless the reader is told the machine and configuration on which they were obtained.
+
+
+	<h2>Does the paper contain too much information?</h2>
+	<p>A paper should be as succinct as possible. A long, poorly written paper will likely be rejected. If you have solved a single, practical problem, don't try to generalize it for the purposes of publication. If you have a formal theory or elaborate architecture, don't include all the vagaries of the implementation unless they are critical to the utility of the theory. Don't include the contents of your user's manual; instead, describe the model or functionality achieved. You should assume your audience has a working knowledge of user interface development and access to the major journals in computer science, electrical engineering, and psychology. A conference paper can only present a few concise ideas well.
+
+
+	<h2>Can this paper be presented well?</h2>
+	<p>While UIST papers are judged primarily as technical papers, some consideration is given to how suitable the topic is for a conference presentation. Think of how you would present your ideas, and how big the audience would be. Papers that have a small number of concisely stated new ideas and that are visually interesting tend to appeal to a large audience and be easy to present. As recent conferences clearly show, these criteria do not eliminate papers that have taxonomies or strong theoretical content, or that appeal to a specialized audience, as long as they contain significant new ideas.
+
+
+	<h2>Production Quality</h2>
+	<p>It is very important to put effort into the production of your paper. A paper that shows effort will likely induce a reviewer to put effort into their reviews. On the other hand, when the author appears to have put little effort or thought into the production of a paper, the reviewer will not be motivated to read the paper carefully and produce a good review. There is no excuse for spelling mistakes in papers. A large number of misspelled words in a paper indicates to the reviewer that the author didn't care enough about his or her paper to run a spell checker on it. With this attitude on the part of the author, why should the reviewer bother doing a good job? The same goes for missing references, mislabeled or illegible figures, wrong format, and other trivial problems that could be caught by careful proofreading. Don't expect reviewers to read your paper carefully if you are not willing to read it carefully first!
+
+
+	<h2>Don’t Wait until the Last Minute</h2>
+	<p>The submission site will open March 1, 2016 and close on April 13, 2016 at Noon PDT. This gives you six *weeks* to submit your paper. Rushing to submit on the day of submission deadline is unlikely to have good results. Beyond simple stress, a rushed submission is likely to have errors and production problems. In some cases, technical issues with the submission site may cause you to miss the deadline. With a 6-week submission window, consider submitting your work as late as 24 hours before the deadline (i.e., submit on April 12, 2016), and spend the remaining time correcting any typos or grammatical errors.
+
+
+	<h2>Resubmitting Rejected Papers</h2>
+	<p>Has this paper been submitted to a conference before and been rejected? If this is the case, think carefully before you submit it again! There must have been some reason(s) why the paper was rejected. (Yes, we all blame bad reviewing, but there must also have been some other reason.) Read previous reviewers’ comments and try to determine what they would like to see changed, and then make those changes. There is a good chance that a resubmitted paper will be reviewed again by a reviewer who gave it a poor rating before (or who recalled the deliberations over your previous submission in the Program Committee meeting of another conference). If the paper has not been changed to reflect that reviewers’ comments, it is likely that your paper will get an even lower rating. Yes, sometimes the reviewers’ comments are wrong (reviewers are only human, after all), but this usually implies that you need to write more clearly or provide more evidence for your claims. Each of us has received what we originally considered to be bad reviews on some paper, but after calm consideration (weeks, or even months, later) realized that these reviews pointed out real faults in our paper. If a hand-picked reviewer is confused about what you are saying, the chances are good that the average reader will also be confused.
+
+
+	<h2>Let It Sit</h2>
+	<p>A highly recommended technique is to write the paper, and let it sit on your desk for a week or two. Then go back and read the paper as if you were a reviewer who doesn't know the author. While you are writing a paper, you are too closely tied to the work to be able to criticize it effectively. After a break of a week or two, you will be much more objective and may see organizational problems that weren't evident when you were actively working on the paper.
+
+
+	<h2>In-House Review</h2>
+	<p>Another strategy you can use to improve overall quality of your paper is to have your own colleagues do an "in-house" review of it before you submit it to the conference for formal review. That requires beginning far enough in advance of the deadline that you have a protective cushion in your schedule.
+
+
+	<h2>Summary</h2>
+	<p>Given that UIST is one the premier forums for innovations in human-computer interfaces, the review process is always going to be highly competitive. Writing a submission for UIST is a lot of work, but it is rewarded with the visibility and influence that UIST offers. We hope this document has helped give you some clear and concrete guidance on how to write a successful UIST submission.
+</section>
+
+@@include('_footer.html')
