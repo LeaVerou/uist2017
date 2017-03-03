@@ -312,6 +312,8 @@ table {
     padding: .4em .5em; }
   table th {
     text-align: left; }
+  table tbody tr:nth-child(odd) {
+    background: #ffeae6; }
 
 table.dates {
   margin: 1em 0; }
@@ -320,8 +322,6 @@ table.dates {
     font: bold 150%/1.5 Arvo, serif; }
   table.dates tbody td:empty::before {
     content: "TBD"; }
-  table.dates tbody tr:nth-child(odd) {
-    background: #ffeae6; }
   table.dates tbody th {
     font-weight: normal; }
     @media (min-width: 600px) {
@@ -471,5 +471,31 @@ section.organizers {
     column-span: all; }
   #toc:not(.compact) a {
     display: block; }
+
+@media (min-width: 550px) {
+  #program-committee table {
+    -moz-columns: 2;
+    columns: 2; }
+  #program-committee thead {
+    -moz-column-span: all;
+    column-span: all; } }
+
+#program-committee tr, #program-committee td, #program-committee table, #program-committee thead {
+  display: block; }
+
+#program-committee tr {
+  padding: .5em;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box; }
+
+#program-committee td:first-child {
+  font-weight: bold;
+  line-height: 1; }
+
+#program-committee td:nth-child(2) {
+  font-size: 75%; }
 
 /*# sourceMappingURL=style.css.map */

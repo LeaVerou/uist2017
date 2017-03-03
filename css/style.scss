@@ -465,10 +465,10 @@ table {
 	}
 
 	tbody {
-
+		tr:nth-child(odd) {
+			background: lighten($accent-color, 45%);
+		}
 	}
-
-
 }
 
 table.dates {
@@ -484,10 +484,6 @@ table.dates {
 			&:empty::before {
 				content: "TBD";
 			}
-		}
-
-		tr:nth-child(odd) {
-			background: lighten($accent-color, 45%);
 		}
 
 		th {
@@ -676,5 +672,39 @@ section.organizers {
 		a {
 			display: block;
 		}
+	}
+}
+
+#program-committee {
+	@media (min-width: 550px) {
+		table {
+			columns: 2;
+		}
+
+		thead {
+			column-span: all;
+		}
+	}
+
+	tr, td, table, thead {
+		display: block;
+	}
+
+	tr {
+		padding: .5em;
+		break-inside: avoid; // for the future
+		display: inline-block;  // workaround for lack
+		width: 100%;            // of break-inside support
+		box-sizing: border-box; // in Safari
+	}
+
+	td:first-child {
+		font-weight: bold;
+		line-height: 1;
+	}
+
+	// Affiliation
+	td:nth-child(2) {
+		font-size: 75%;
 	}
 }
