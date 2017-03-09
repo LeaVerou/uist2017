@@ -433,6 +433,12 @@ body > footer {
 	color: rgba(0,0,0,.5);
 	font-weight: bold;
 	hyphens: auto;
+	display: flex;
+	flex-flow: column;
+
+	p {
+		margin: 0;
+	}
 
 	h1 {
 		@extend %inline-heading;
@@ -444,6 +450,41 @@ body > footer {
 
 	@media (min-width: 800px) {
 		font-size: 125%;
+		flex-flow: row;
+	}
+
+	@media (max-width: 401px) {
+
+	}
+
+	.sponsor {
+		display: flex;
+		flex-flow: column;
+		background: tint($secondary-color, 85%);
+		padding: .5em;
+		border-radius: .3em;
+		margin: 1em 0 0 0;
+
+		@media (min-width: 800px) {
+			margin: 0 0 0 1em;
+		}
+
+		h1 {
+			margin-bottom: 1em;
+			margin-right: 0;
+			background: tint($secondary-color, 50%);
+		}
+
+		a {
+			margin: auto;
+		}
+
+		img {
+			display: block;
+			max-height: 5em;
+			max-width: 11em;
+			margin-bottom: 1.5em;
+		}
 	}
 }
 

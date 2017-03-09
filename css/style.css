@@ -295,12 +295,43 @@ body > footer {
   font-weight: bold;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
-  hyphens: auto; }
+  hyphens: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+  flex-flow: column; }
+  #welcome p {
+    margin: 0; }
   #welcome strong, #welcome a {
     color: rgba(0, 0, 0, 0.7); }
   @media (min-width: 800px) {
     #welcome {
-      font-size: 125%; } }
+      font-size: 125%;
+      -ms-flex-flow: row;
+      flex-flow: row; } }
+  #welcome .sponsor {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    background: #e4eef4;
+    padding: .5em;
+    border-radius: .3em;
+    margin: 1em 0 0 0; }
+    @media (min-width: 800px) {
+      #welcome .sponsor {
+        margin: 0 0 0 1em; } }
+    #welcome .sponsor h1 {
+      margin-bottom: 1em;
+      margin-right: 0;
+      background: #a6c8d9; }
+    #welcome .sponsor a {
+      margin: auto; }
+    #welcome .sponsor img {
+      display: block;
+      max-height: 5em;
+      max-width: 11em;
+      margin-bottom: 1.5em; }
 
 table {
   width: 100%;
