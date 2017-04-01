@@ -390,6 +390,7 @@ table.dates {
         flex-flow: column; } }
 
 table#sponsorship-levels {
+  min-width: 620px;
   border-collapse: collapse;
   table-layout: fixed;
   border: 2px solid #d9d9d9; }
@@ -398,40 +399,48 @@ table#sponsorship-levels {
   table#sponsorship-levels th {
     line-height: 1.4;
     text-align: center; }
+    @media (max-width: 900px) {
+      table#sponsorship-levels th {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto; } }
     table#sponsorship-levels th small {
       display: block;
       font-weight: normal;
       font-size: 70%; }
+    @media (max-width: 800px) {
+      table#sponsorship-levels th small {
+        display: none; } }
   table#sponsorship-levels td {
     vertical-align: middle;
     height: 2.4rem; }
   table#sponsorship-levels th:nth-child(1) {
-    width: 9%; }
+    width: 3em; }
   table#sponsorship-levels th:nth-child(2) {
-    width: 7%; }
+    width: 3em; }
   table#sponsorship-levels th:nth-child(3) {
-    width: 12%; }
+    width: 10%; }
   table#sponsorship-levels th:nth-child(4) {
     width: 18%; }
   table#sponsorship-levels tr:nth-child(2) th {
     font-size: 75%; }
   table#sponsorship-levels th:nth-child(n + 5):nth-child(-n + 7) {
     width: 12%; }
-  table#sponsorship-levels td:nth-child(1) {
-    font-size: 140%;
-    letter-spacing: -.02em; }
-  table#sponsorship-levels td:nth-child(3)::after {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: .5em;
-    --ticket-width: 1em;
-    --ticket-height: var(--ticket-width);
-    width: calc(var(--registrations) * var(--ticket-width) / var(--rows, 1));
-    height: calc(var(--rows, 1) * var(--ticket-height));
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">			<circle r="40" cx="60" cy="50" fill="hsl(80,100%,40%)" />			</svg>');
-    background-size: var(--ticket-width) var(--ticket-height);
-    font-size: 110%; }
+  @media (min-width: 900px) {
+    table#sponsorship-levels th:nth-child(3) {
+      width: 12%; }
+    table#sponsorship-levels td:nth-child(3)::after {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: .5em;
+      --ticket-width: 1em;
+      --ticket-height: var(--ticket-width);
+      width: calc(var(--registrations) * var(--ticket-width) / var(--rows, 1));
+      height: calc(var(--rows, 1) * var(--ticket-height));
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">				<circle r="40" cx="60" cy="50" fill="hsl(80,100%,40%)" />				</svg>');
+      background-size: var(--ticket-width) var(--ticket-height);
+      font-size: 110%; } }
   table#sponsorship-levels tbody td:nth-child(n + 3):nth-child(-n + 9) {
     background: rgba(221, 255, 153, 0.5);
     color: #669900;

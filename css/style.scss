@@ -581,6 +581,7 @@ table.dates {
 }
 
 table#sponsorship-levels {
+	min-width: 620px;
 	border-collapse: collapse;
 	table-layout: fixed;
 	border: 2px solid hsl(0, 0%, 85%);
@@ -593,10 +594,20 @@ table#sponsorship-levels {
 		line-height: 1.4;
 		text-align: center;
 
+		@media (max-width: 900px) {
+			hyphens: auto;
+		}
+
 		small {
 			display: block;
 			font-weight: normal;
 			font-size: 70%;
+		}
+
+		@media (max-width: 800px) {
+			small {
+				display: none;
+			}
 		}
 	}
 
@@ -606,16 +617,15 @@ table#sponsorship-levels {
 	}
 
 	th:nth-child(1) {
-		width: 9%;
+		width: 3em;
 	}
 
 	th:nth-child(2) {
-		width: 7%;
+		width: 3em;
 	}
 
-	// Free regs
 	th:nth-child(3) {
-		width: 12%;
+		width: 10%;
 	}
 
 	th:nth-child(4) {
@@ -630,25 +640,27 @@ table#sponsorship-levels {
 		width: 12%;
 	}
 
-	td:nth-child(1) {
-		font-size: 140%;
-		letter-spacing: -.02em;
-	}
+	@media (min-width: 900px) {
+		// Free regs
+		th:nth-child(3) {
+			width: 12%;
+		}
 
-	td:nth-child(3)::after {
-		content: "";
-		display: inline-block;
-		vertical-align: middle;
-		margin-left: .5em;
-		--ticket-width: 1em;
-		--ticket-height: var(--ticket-width);
-		width: calc(var(--registrations) * var(--ticket-width) / var(--rows, 1));
-		height: calc(var(--rows, 1) * var(--ticket-height));
-		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">\
-			<circle r="40" cx="60" cy="50" fill="hsl(80,100%,40%)" />\
-			</svg>');
-		background-size: var(--ticket-width) var(--ticket-height);
-		font-size: 110%;
+		td:nth-child(3)::after {
+			content: "";
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: .5em;
+			--ticket-width: 1em;
+			--ticket-height: var(--ticket-width);
+			width: calc(var(--registrations) * var(--ticket-width) / var(--rows, 1));
+			height: calc(var(--rows, 1) * var(--ticket-height));
+			background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">\
+				<circle r="40" cx="60" cy="50" fill="hsl(80,100%,40%)" />\
+				</svg>');
+			background-size: var(--ticket-width) var(--ticket-height);
+			font-size: 110%;
+		}
 	}
 
 	tbody {
