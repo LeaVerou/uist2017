@@ -17,7 +17,7 @@ To setup the build tools for doing that, follow the instructions below:
 	1. Open your Terminal and navigate to the folder you want to work in
 	2. Run `git clone https://github.com/LeaVerou/uist2017.git`
 	3. `cd uist2017` to navigate to the newly created folder
-3. Run `npm install`
+3. Run `npm install`. This will install the build tools (gulp) and any dependencies.
 
 That’s it! Now just run `gulp watch` before you make any edits, and it will automatically generate the files needed.
 
