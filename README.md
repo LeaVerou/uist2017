@@ -23,6 +23,8 @@ That’s it! Now just run `gulp watch` before you make any edits, and it will au
 
 If this seems like too much hassle, you can always transfer your edits to the `index.html` files manually.
 
+Note that **all URLs are relative and will NOT resolve properly on the `file://` protocol**. Instead, run `python -m SimpleHTTPServer 8000` on the parent directory, then your local version will be on `http://localhost:8000/uist2017`.
+
 ## How to add a new page
 
 Create a folder with the name of the path you want for your page (e.g. for `https://uist.acm.org/uist2017/cfp` the folder name is `cfp`). Inside it, put an `index.tpl.html` page and copy the head and foot `@@include`s from any of the other pages. Once you save (and assuming you've followed the instructions in the second section and are running `gulp watch`), an `index.html` file will be created in the same location as the `index.tpl.html` file.
