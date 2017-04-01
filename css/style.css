@@ -344,7 +344,7 @@ table {
   table th {
     text-align: left; }
   table tbody tr:nth-child(odd) {
-    background: #ffeae6; }
+    background: #fff2f0; }
 
 table.dates {
   margin: 1em 0; }
@@ -388,6 +388,64 @@ table.dates {
       table.dates tbody td {
         -ms-flex-flow: column;
         flex-flow: column; } }
+
+table#sponsorship-levels {
+  border-collapse: collapse;
+  table-layout: fixed;
+  border: 2px solid #d9d9d9; }
+  table#sponsorship-levels td, table#sponsorship-levels th {
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+  table#sponsorship-levels th {
+    line-height: 1.4;
+    text-align: center; }
+    table#sponsorship-levels th small {
+      display: block;
+      font-weight: normal;
+      font-size: 70%; }
+  table#sponsorship-levels td {
+    vertical-align: middle;
+    height: 2.4rem; }
+  table#sponsorship-levels th:nth-child(1) {
+    width: 9%; }
+  table#sponsorship-levels th:nth-child(2) {
+    width: 7%; }
+  table#sponsorship-levels th:nth-child(3) {
+    width: 12%; }
+  table#sponsorship-levels th:nth-child(4) {
+    width: 18%; }
+  table#sponsorship-levels tr:nth-child(2) th {
+    font-size: 75%; }
+  table#sponsorship-levels th:nth-child(n + 5):nth-child(-n + 7) {
+    width: 12%; }
+  table#sponsorship-levels td:nth-child(1) {
+    font-size: 140%;
+    letter-spacing: -.02em; }
+  table#sponsorship-levels td:nth-child(3)::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .5em;
+    --ticket-width: 1.1em;
+    --ticket-height: 1em;
+    width: calc(var(--registrations) * var(--ticket-width) / var(--rows, 1));
+    height: calc(var(--rows, 1) * var(--ticket-height));
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80">			<text x="9" y="70" font-size="80" transform="rotate(-5)">🎫</text>			</svg>');
+    background-size: var(--ticket-width) var(--ticket-height);
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.25));
+    font-size: 120%; }
+  table#sponsorship-levels tbody td:nth-child(n + 3):nth-child(-n + 9) {
+    background: rgba(221, 255, 153, 0.5);
+    color: #669900;
+    font-weight: bold; }
+    table#sponsorship-levels tbody td:nth-child(n + 3):nth-child(-n + 9):empty {
+      background: rgba(255, 0, 0, 0.1);
+      color: rgba(173, 31, 31, 0.7); }
+      table#sponsorship-levels tbody td:nth-child(n + 3):nth-child(-n + 9):empty::before {
+        content: "✘"; }
+  table#sponsorship-levels tbody td:nth-child(n + 4):nth-child(-n + 9) {
+    text-align: center; }
+  table#sponsorship-levels tbody tr:nth-child(odd) {
+    background: #f7f7f7; }
 
 @media (min-width: 750px) {
   #organizers {
@@ -528,5 +586,53 @@ section.organizers {
 
 #program-committee td:nth-child(2) {
   font-size: 75%; }
+
+.page-sponsor h1[data-contribution]::after {
+  content: "Contribution of $" attr(data-contribution) " or more";
+  display: block;
+  margin-top: .3em;
+  font-weight: 300;
+  font-size: 50%;
+  font-family: Lato, Helvetica Neue, sans-serif; }
+
+.page-sponsor section ul {
+  margin-bottom: 1em; }
+
+.page-sponsor .sponsor {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 20em;
+  margin: .3em .3em 0 0;
+  border-radius: .1em;
+  box-sizing: border-box;
+  padding: .8em 1em;
+  border: 2px dashed transparent;
+  background: #edf4f7;
+  font-size: 300%;
+  line-height: 1;
+  color: #94bdd1; }
+  .page-sponsor .sponsor:last-of-type {
+    background: transparent;
+    border-color: #b8d3e0; }
+  .page-sponsor .sponsor:hover {
+    background: #dbe9f0;
+    text-decoration: none; }
+  .page-sponsor .sponsor img {
+    display: block;
+    max-width: 100%;
+    margin: 0;
+    height: 1em; }
+
+.page-sponsor .platinum {
+  color: #88847b; }
+
+.page-sponsor .gold {
+  color: #D4AF37; }
+
+.page-sponsor .silver {
+  color: #a9a59f; }
+
+.page-sponsor .bronze {
+  color: #d7995b; }
 
 /*# sourceMappingURL=style.css.map */

@@ -27,6 +27,24 @@ if (new Date().getFullYear() <= 2017 && $("table.dates")) {
 	});
 }
 
+// Which page are we on?
+var page = (location.pathname.match(/\/(\w+)\/$/) || [])[1];
+
+if (page) {
+	document.body.classList.add("page-" + page);
+}
+
+if (page == "sponsor") {
+	$$("#platinum, #gold, #silver, #bronze, #friends").forEach(function(section) {
+		$.create("a", {
+			className: "sponsor",
+			textContent: "You?",
+			href: "mailto:sponsorship@uist.org?subject=Interested in a " + section.id + " sponsorship for UIST 2017",
+			inside: section
+		});
+	});
+}
+
 // Facilitate deep linking: Give every section an id and make its heading a link
 $$("main section > h1").forEach(function (h1) {
 	var section = h1.parentNode;

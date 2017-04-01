@@ -507,7 +507,7 @@ table {
 
 	tbody {
 		tr:nth-child(odd) {
-			background: lighten($accent-color, 45%);
+			background: lighten($accent-color, 47%);
 		}
 	}
 }
@@ -576,6 +576,104 @@ table.dates {
 			@media (max-width: 800px) {
 				flex-flow: column;
 			}
+		}
+	}
+}
+
+table#sponsorship-levels {
+	border-collapse: collapse;
+	table-layout: fixed;
+	border: 2px solid hsl(0, 0%, 85%);
+
+	td, th {
+		border: 1px solid rgba(0,0,0,.1);
+	}
+
+	th {
+		line-height: 1.4;
+		text-align: center;
+
+		small {
+			display: block;
+			font-weight: normal;
+			font-size: 70%;
+		}
+	}
+
+	td {
+		vertical-align: middle;
+		height: 2.4rem;
+	}
+
+	th:nth-child(1) {
+		width: 9%;
+	}
+
+	th:nth-child(2) {
+		width: 7%;
+	}
+
+	// Free regs
+	th:nth-child(3) {
+		width: 12%;
+	}
+
+	th:nth-child(4) {
+		width: 18%;
+	}
+
+	tr:nth-child(2) th {
+		font-size: 75%;
+	}
+
+	th:nth-child(n + 5):nth-child(-n + 7) {
+		width: 12%;
+	}
+
+	td:nth-child(1) {
+		font-size: 140%;
+		letter-spacing: -.02em;
+	}
+
+	td:nth-child(3)::after {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: .5em;
+		--ticket-width: 1.1em;
+		--ticket-height: 1em;
+		width: calc(var(--registrations) * var(--ticket-width) / var(--rows, 1));
+		height: calc(var(--rows, 1) * var(--ticket-height));
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80">\
+			<text x="9" y="70" font-size="80" transform="rotate(-5)">🎫</text>\
+			</svg>');
+		background-size: var(--ticket-width) var(--ticket-height);
+		filter: drop-shadow(1px 1px 1px rgba(0,0,0,.25));
+		font-size: 120%;
+	}
+
+	tbody {
+		td:nth-child(n + 3):nth-child(-n + 9) { // 4-9
+			background: hsla(80, 100%, 80%, .5);
+			color: hsl(80, 100%, 30%);
+			font-weight: bold;
+
+			&:empty {
+				background: hsla(0, 100%, 50%, .1);
+				color: hsla(0, 70%, 40%, .7);
+
+				&::before {
+					content: "✘";
+				}
+			}
+		}
+
+		td:nth-child(n + 4):nth-child(-n + 9) {
+			text-align: center;
+		}
+
+		tr:nth-child(odd) {
+			background: hsl(0,0%, 97%);
 		}
 	}
 }
@@ -747,5 +845,68 @@ section.organizers {
 	// Affiliation
 	td:nth-child(2) {
 		font-size: 75%;
+	}
+}
+
+.page-sponsor {
+	h1[data-contribution]::after {
+		content: "Contribution of $" attr(data-contribution) " or more";
+		display: block;
+		margin-top: .3em;
+		font-weight: 300;
+		font-size: 50%;
+		font-family: $body-font;
+	}
+
+	section ul {
+		margin-bottom: 1em;
+	}
+
+	.sponsor {
+		display: inline-block;
+		vertical-align: top;
+		max-width: 20em;
+		margin: .3em .3em 0 0;
+		border-radius: .1em;
+		box-sizing: border-box;
+		padding: .8em 1em;
+		border: 2px dashed transparent;
+		background: tint($secondary-color, 90%);
+		font-size: 300%;
+		line-height: 1;
+		color: tint($secondary-color, 40%);
+
+		&:last-of-type {
+			background: transparent;
+			border-color: tint($secondary-color, 60%);
+		}
+
+		&:hover {
+			background: tint($secondary-color, 80%);
+			text-decoration: none;
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+			margin: 0;
+			height: 1em;
+		}
+	}
+
+	.platinum {
+		color:#88847b;
+	}
+
+	.gold {
+		color: #D4AF37;
+	}
+
+	.silver {
+		color: #a9a59f;
+	}
+
+	.bronze {
+		color: #d7995b;
 	}
 }

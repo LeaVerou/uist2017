@@ -25,11 +25,6 @@ gulp.task("sass", function() {
 		.pipe(notify("<%= file.relative %> done!"));
 });
 
-gulp.task("update", function() {
-	gulp.src(["../mavo/dist/mavo.css"]).pipe(gulp.dest("css"));
-	gulp.src(["../mavo/dist/mavo.min.js"]).pipe(gulp.dest("js"));
-});
-
 gulp.task("html", function() {
 	gulp.src(["**/*.tpl.html"])
 		.pipe(fileinclude({
