@@ -55,6 +55,9 @@ a {
       content: " ↗️";
       color: #4d91b3; }
 
+img {
+  max-width: 100%; }
+
 body > header {
   padding: 1em 0 0;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("../images/header.jpg") top/cover #4d91b3;

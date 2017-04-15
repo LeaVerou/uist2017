@@ -91,6 +91,10 @@ a {
 	}
 }
 
+img {
+	max-width: 100%;
+}
+
 body > header {
 	padding: 1em 0 0;
 	background: linear-gradient(transparent, rgba(0,0,0,.4)),
