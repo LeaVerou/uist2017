@@ -296,6 +296,12 @@ body > main {
 		font-size: 220%;
 	}
 
+	& > h3 {
+		font-weight: bold;
+		color: $secondary-color;
+		margin-top: 1.2em;
+	}
+
 	section {
 		margin: 1.5em 0;
 	}
@@ -331,7 +337,7 @@ body > main {
 		}
 	}
 
-	:not(h1):not(h2) + p {
+	:not(h1):not(h2):not(h3) + p {
 		margin-top: 1em;
 	}
 }

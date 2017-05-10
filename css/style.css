@@ -199,6 +199,10 @@ body > main {
   body > main > section > h1 {
     color: #ff2b00;
     font-size: 220%; }
+  body > main > h3 {
+    font-weight: bold;
+    color: #4d91b3;
+    margin-top: 1.2em; }
   body > main section {
     margin: 1.5em 0; }
   body > main > section > section > h1,
@@ -217,7 +221,7 @@ body > main {
     @media (min-width: 1600px) {
       body > main > * {
         width: 75rem; } }
-  body > main :not(h1):not(h2) + p {
+  body > main :not(h1):not(h2):not(h3) + p {
     margin-top: 1em; }
 
 body > footer {
