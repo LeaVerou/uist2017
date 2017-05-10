@@ -925,3 +925,21 @@ section.organizers {
 		color: #d7995b;
 	}
 }
+
+#acm-sponsors {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 3em;
+
+	a {
+		height: 6em;
+
+		&:not(:hover):not(:focus) {
+			filter: sepia() grayscale(50%) hue-rotate(150deg);
+		}
+	}
+
+	img {
+		height: 100%;
+	}
+}

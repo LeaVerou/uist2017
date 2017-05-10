@@ -646,4 +646,17 @@ section.organizers {
 .page-sponsor .bronze {
   color: #d7995b; }
 
+#acm-sponsors {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 3em; }
+  #acm-sponsors a {
+    height: 6em; }
+    #acm-sponsors a:not(:hover):not(:focus) {
+      filter: sepia() grayscale(50%) hue-rotate(150deg); }
+  #acm-sponsors img {
+    height: 100%; }
+
 /*# sourceMappingURL=style.css.map */
