@@ -580,7 +580,7 @@ section.organizers {
     -moz-column-span: all;
     column-span: all; } }
 
-#program-committee tr, #program-committee td, #program-committee table, #program-committee thead {
+#program-committee tr, #program-committee td, #program-committee table, #program-committee thead, #program-committee tbody {
   display: block; }
 
 #program-committee tr {
