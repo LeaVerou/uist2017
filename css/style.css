@@ -178,6 +178,17 @@ body > header {
       body > header.compact p {
         display: none; } }
 
+[aria-level="2"], body > main > h2,
+body > main > section > h1 {
+  color: #ff2b00;
+  font-size: 220%; }
+
+[aria-level="3"], body > main > h3, body > main > section > section > h1,
+body > main > section > h2 {
+  font-weight: bold;
+  color: #4d91b3;
+  margin-top: 1.2em; }
+
 body > main {
   -ms-flex: 1;
   flex: 1;
@@ -195,21 +206,8 @@ body > main {
     @media (min-width: 500px) {
       body > main > h1 {
         font-size: 450%; } }
-  body > main > h2,
-  body > main > section > h1 {
-    color: #ff2b00;
-    font-size: 220%; }
-  body > main > h3 {
-    font-weight: bold;
-    color: #4d91b3;
-    margin-top: 1.2em; }
   body > main section {
     margin: 1.5em 0; }
-  body > main > section > section > h1,
-  body > main > section > h2 {
-    font-weight: bold;
-    color: #4d91b3;
-    margin-top: 1.2em; }
   body > main > section > section h2, body > main > section > section section h1 {
     margin-top: 1.2em;
     background: #82b2c9; }
@@ -662,5 +660,41 @@ section.organizers {
       filter: sepia() grayscale(50%) hue-rotate(150deg); }
   #acm-sponsors img {
     height: 100%; }
+
+#keynote article > a {
+  position: relative;
+  display: block; }
+  #keynote article > a img {
+    display: block; }
+  #keynote article > a h1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 6em;
+    font-weight: bold;
+    font-size: 240%;
+    text-align: right; }
+    #keynote article > a h1 > span {
+      padding: .1em .3em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      line-height: 1.6;
+      background: #ff2b00;
+      color: white;
+      mix-blend-mode: hard-light; }
+
+@media (min-width: 750px) {
+  #keynote {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    #keynote > h1 {
+      width: 100%; }
+    #keynote article {
+      -ms-flex-preferred-size: 49%;
+      flex-basis: 49%; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -273,6 +273,17 @@ body > header {
 	}
 }
 
+[aria-level="2"] {
+	color: $accent-color;
+	font-size: 220%;
+}
+
+[aria-level="3"] {
+	font-weight: bold;
+	color: $secondary-color;
+	margin-top: 1.2em;
+}
+
 body > main {
 	flex: 1;
 	display: flex;
@@ -292,14 +303,11 @@ body > main {
 
 	& > h2,
 	& > section > h1 {
-		color: $accent-color;
-		font-size: 220%;
+		@extend [aria-level="2"];
 	}
 
 	& > h3 {
-		font-weight: bold;
-		color: $secondary-color;
-		margin-top: 1.2em;
+		@extend [aria-level="3"];
 	}
 
 	section {
@@ -309,9 +317,7 @@ body > main {
 	& > section {
 		& > section > h1,
 		& > h2 {
-			font-weight: bold;
-			color: $secondary-color;
-			margin-top: 1.2em;
+			@extend [aria-level="3"];
 		}
 
 
@@ -947,5 +953,52 @@ section.organizers {
 
 	img {
 		height: 100%;
+	}
+}
+
+#keynote {
+	article {
+		& > a {
+			position: relative;
+			display: block;
+
+			img {
+				display: block;
+			}
+
+			h1 {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				max-width: 6em;
+
+				font-weight: bold;
+				font-size: 240%;
+				text-align: right;
+
+				& > span {
+					padding: .1em .3em;
+					box-decoration-break: clone;
+					line-height: 1.6;
+					background: $accent-color;
+					color: white;
+					mix-blend-mode: hard-light;
+				}
+			}
+		}
+	}
+
+	@media (min-width: 750px) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		& > h1 {
+			width: 100%;
+		}
+
+		article {
+			flex-basis: 49%;
+		}
 	}
 }
