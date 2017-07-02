@@ -505,6 +505,30 @@ body > footer {
 	}
 }
 
+#registration {
+    .centered {
+        text-align: center;
+    }
+
+	.regbutton {
+		background: tint($secondary-color, 85%);
+		padding: .5em 1.5em;
+		border-radius: .5em;
+		margin: 1.0em;
+        display: inline-block;
+        font-size: 100%;
+
+		a {
+			margin: auto;
+		}
+
+	}
+
+    table.regprice {
+        margin-bottom: 2em;
+    }
+}
+
 table {
 	width: 100%;
 	border-spacing: 0;
