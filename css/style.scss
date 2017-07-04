@@ -511,7 +511,8 @@ body > footer {
     }
 
 	.regbutton {
-		background: tint($accent-color, 85%);
+		background: $accent-color;
+        color: #fff;
 		padding: .5em 1.5em;
 		border-radius: .5em;
 		margin: 1.0em;

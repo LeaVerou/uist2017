@@ -344,7 +344,8 @@ body > footer {
   text-align: center; }
 
 #registration .regbutton {
-  background: #ffdfd9;
+  background: #ff2b00;
+  color: #fff;
   padding: .5em 1.5em;
   border-radius: .5em;
   margin: 1.0em;
