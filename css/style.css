@@ -32,6 +32,7 @@ body {
   font: 300 100%/1.5 Lato, Helvetica Neue, sans-serif;
   -webkit-text-decoration-skip: ink;
   text-decoration-skip: ink;
+  -webkit-font-kerning: normal;
   font-kerning: normal;
   font-synthesis: none; }
 
@@ -339,6 +340,23 @@ body > footer {
       height: 3em;
       margin: 1.5em 1em; }
 
+#registration .centered {
+  text-align: center; }
+
+#registration .regbutton {
+  background: #ff2b00;
+  color: white;
+  padding: .5em 1.5em;
+  border-radius: .5em;
+  margin: 1.0em;
+  display: inline-block;
+  font-size: 100%; }
+  #registration .regbutton a {
+    margin: auto; }
+
+#registration table.regprice {
+  margin-bottom: 2em; }
+
 table {
   width: 100%;
   border-spacing: 0; }
@@ -463,20 +481,16 @@ table#sponsorship-levels {
 
 @media (min-width: 750px) {
   #organizers {
-    -moz-columns: 2;
     columns: 2; }
     #organizers > h1 {
-      -moz-column-span: all;
       column-span: all; } }
 
 @media (min-width: 1600px) {
   #organizers {
-    -moz-columns: 3;
     columns: 3; } }
 
 #organizers > section,
 section.organizers {
-  page-break-inside: avoid;
   break-inside: avoid;
   display: inline-block;
   width: 100%;
@@ -562,7 +576,6 @@ section.organizers {
       text-decoration: none; }
   @media (min-width: 800px) {
     #toc:not(.compact) {
-      -moz-column-count: 2;
       column-count: 2; } }
   #toc:not(.compact)::before {
     content: "On this page";
@@ -570,17 +583,14 @@ section.organizers {
     font-weight: 900;
     font-size: 150%;
     color: #4d91b3;
-    -moz-column-span: all;
     column-span: all; }
   #toc:not(.compact) a {
     display: block; }
 
 @media (min-width: 550px) {
   #program-committee table {
-    -moz-columns: 2;
     columns: 2; }
   #program-committee thead {
-    -moz-column-span: all;
     column-span: all; } }
 
 #program-committee tr, #program-committee td, #program-committee table, #program-committee thead, #program-committee tbody {
@@ -588,7 +598,6 @@ section.organizers {
 
 #program-committee tr {
   padding: .5em;
-  page-break-inside: avoid;
   break-inside: avoid;
   display: inline-block;
   width: 100%;
