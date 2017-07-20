@@ -336,8 +336,10 @@ body > footer {
       margin: auto; }
     #sponsors .sponsor img {
       display: block;
+      max-width: calc(100% - 2em);
       height: 3em;
-      margin: 1.5em 1em; }
+      margin: 1.5em 1em;
+      object-fit: contain; }
 
 #registration .centered {
   text-align: center; }

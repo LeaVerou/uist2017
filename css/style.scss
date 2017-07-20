@@ -499,8 +499,10 @@ body > footer {
 
 		img {
 			display: block;
+			max-width: calc(100% - 2em);
 			height: 3em;
 			margin: 1.5em 1em;
+			object-fit: contain;
 		}
 	}
 }
