@@ -476,15 +476,18 @@ body > footer {
 
 #sponsors {
 	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: center;
 
 	.sponsor {
 		display: flex;
 		flex-flow: column;
+		xmin-width: 12em;
 		background: tint($secondary-color, 85%);
 		padding: .5em;
 		border-radius: .5em;
-		margin: 0;
-		margin-right: 1em;
+		margin: 0 1em 1em 0;
 
 		h1 {
 			@extend %inline-heading;
@@ -503,6 +506,14 @@ body > footer {
 			height: 3em;
 			margin: 1.5em 1em;
 			object-fit: contain;
+		}
+
+		&.platinum {
+			font-size: 130%;
+		}
+
+		&.bronze {
+			font-size: 60%;
 		}
 	}
 }
