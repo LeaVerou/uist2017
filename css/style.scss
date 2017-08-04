@@ -476,15 +476,18 @@ body > footer {
 
 #sponsors {
 	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: center;
 
 	.sponsor {
 		display: flex;
 		flex-flow: column;
+		xmin-width: 12em;
 		background: tint($secondary-color, 85%);
 		padding: .5em;
 		border-radius: .5em;
-		margin: 0;
-		margin-right: 1em;
+		margin: 0 1em 1em 0;
 
 		h1 {
 			@extend %inline-heading;
@@ -499,10 +502,45 @@ body > footer {
 
 		img {
 			display: block;
+			max-width: calc(100% - 2em);
 			height: 3em;
 			margin: 1.5em 1em;
+			object-fit: contain;
+		}
+
+		&.platinum {
+			font-size: 130%;
+		}
+
+		&.bronze {
+			font-size: 60%;
 		}
 	}
+}
+
+#registration {
+    .centered {
+        text-align: center;
+    }
+
+	.regbutton {
+		background: $accent-color;
+        color: white;
+		padding: .5em 1.5em;
+		border-radius: .5em;
+		margin: 1.0em;
+        display: inline-block;
+        font-size: 100%;
+
+		a {
+			margin: auto;
+		}
+
+	}
+
+    table.regprice {
+        margin-bottom: 2em;
+    }
 }
 
 table {
@@ -1001,5 +1039,23 @@ section.organizers {
 		article {
 			flex-basis: 49%;
 		}
+	}
+}
+
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 }

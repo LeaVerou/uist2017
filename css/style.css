@@ -317,17 +317,23 @@ body > footer {
 
 #sponsors {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -ms-flex-pack: center;
+  justify-content: center; }
   #sponsors .sponsor {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-flow: column;
     flex-flow: column;
+    xmin-width: 12em;
     background: #e4eef4;
     padding: .5em;
     border-radius: .5em;
-    margin: 0;
-    margin-right: 1em; }
+    margin: 0 1em 1em 0; }
     #sponsors .sponsor h1 {
       margin-right: 0;
       background: #a6c8d9;
@@ -336,8 +342,31 @@ body > footer {
       margin: auto; }
     #sponsors .sponsor img {
       display: block;
+      max-width: calc(100% - 2em);
       height: 3em;
-      margin: 1.5em 1em; }
+      margin: 1.5em 1em;
+      object-fit: contain; }
+    #sponsors .sponsor.platinum {
+      font-size: 130%; }
+    #sponsors .sponsor.bronze {
+      font-size: 60%; }
+
+#registration .centered {
+  text-align: center; }
+
+#registration .regbutton {
+  background: #ff2b00;
+  color: white;
+  padding: .5em 1.5em;
+  border-radius: .5em;
+  margin: 1.0em;
+  display: inline-block;
+  font-size: 100%; }
+  #registration .regbutton a {
+    margin: auto; }
+
+#registration table.regprice {
+  margin-bottom: 2em; }
 
 table {
   width: 100%;
@@ -697,5 +726,20 @@ section.organizers {
     #keynote article {
       -ms-flex-preferred-size: 49%;
       flex-basis: 49%; } }
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%; }
+  .embed-container iframe,
+  .embed-container object,
+  .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 /*# sourceMappingURL=style.css.map */
