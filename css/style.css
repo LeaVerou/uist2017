@@ -42,6 +42,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2; }
   h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
     font-weight: inherit; }
+    h1 > a.button, h2 > a.button, h3 > a.button, h4 > a.button, h5 > a.button, h6 > a.button {
+      display: inline-block;
+      vertical-align: .3em;
+      padding: .3em .5em;
+      background: #edf4f7;
+      border-radius: .3em;
+      font-size: 1rem; }
 
 a {
   text-decoration: none;
@@ -206,6 +213,8 @@ body > main {
     @media (min-width: 500px) {
       body > main > h1 {
         font-size: 450%; } }
+    body > main > h1 a.button {
+      font-size: 1.2rem; }
   body > main section {
     margin: 1.5em 0; }
   body > main > section > section h2, body > main > section > section section h1 {
@@ -350,6 +359,9 @@ body > footer {
       font-size: 130%; }
     #sponsors .sponsor.bronze {
       font-size: 60%; }
+    #sponsors .sponsor span {
+      font-size: 300%;
+      font-weight: 100; }
 
 #registration .centered {
   text-align: center; }
@@ -741,5 +753,15 @@ section.organizers {
     left: 0;
     width: 100%;
     height: 100%; }
+
+iframe {
+  border: 0; }
+
+.page-schedule iframe {
+  -ms-flex: 1;
+  flex: 1; }
+
+.page-schedule > footer {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

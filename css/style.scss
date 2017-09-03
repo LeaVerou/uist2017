@@ -66,6 +66,15 @@ h1, h2, h3, h4, h5, h6 {
 
 	& > a {
 		font-weight: inherit;
+
+		&.button {
+			display: inline-block;
+			vertical-align: .3em;
+			padding: .3em .5em;
+			background: tint($secondary-color, 90%);
+			border-radius: .3em;
+			font-size: 1rem;
+		}
 	}
 }
 
@@ -299,6 +308,10 @@ body > main {
 		@media (min-width: 500px) {
 			font-size: 450%;
 		}
+
+		a.button {
+			font-size: 1.2rem;
+		}
 	}
 
 	& > h2,
@@ -514,6 +527,11 @@ body > footer {
 
 		&.bronze {
 			font-size: 60%;
+		}
+
+		span {
+			font-size: 300%;
+			font-weight: 100;
 		}
 	}
 }
@@ -1057,5 +1075,19 @@ section.organizers {
 		left: 0;
 		width: 100%;
 		height: 100%;
+	}
+}
+
+iframe {
+	border: 0;
+}
+
+.page-schedule {
+	iframe {
+		flex: 1;
+	}
+
+	& > footer {
+		display: none;
 	}
 }
