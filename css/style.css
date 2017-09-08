@@ -332,13 +332,13 @@ body > footer {
   -ms-flex-align: baseline;
   align-items: baseline;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  max-width: 70em; }
   #sponsors .sponsor {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-flow: column;
     flex-flow: column;
-    xmin-width: 12em;
     background: #e4eef4;
     padding: .5em;
     border-radius: .5em;
@@ -358,7 +358,9 @@ body > footer {
     #sponsors .sponsor.platinum {
       font-size: 130%; }
     #sponsors .sponsor.bronze {
-      font-size: 60%; }
+      font-size: 70%; }
+    #sponsors .sponsor.friends {
+      font-size: 50%; }
     #sponsors .sponsor span {
       font-size: 300%;
       font-weight: 100; }

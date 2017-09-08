@@ -492,11 +492,11 @@ body > footer {
 	flex-wrap: wrap;
 	align-items: baseline;
 	justify-content: center;
+	max-width: 70em;
 
 	.sponsor {
 		display: flex;
 		flex-flow: column;
-		xmin-width: 12em;
 		background: tint($secondary-color, 85%);
 		padding: .5em;
 		border-radius: .5em;
@@ -526,7 +526,11 @@ body > footer {
 		}
 
 		&.bronze {
-			font-size: 60%;
+			font-size: 70%;
+		}
+
+		&.friends {
+			font-size: 50%;
 		}
 
 		span {
