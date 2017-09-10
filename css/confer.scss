@@ -1,5 +1,79 @@
 @import "_base";
 
+#header {
+	background: hsla(200, 30%, 40%, .8);
+}
+
+.button {
+	border: none;
+	font-weight: bold;
+	background: tint($secondary-color, 70%);
+
+	&:hover {
+		background: tint($secondary-color, 50%);
+	}
+}
+
+a#logo {
+	background: url(../logo.svg) 4em 50% / auto 1em,
+	            url(../wordmark.svg) 0em 50% / auto .8em;
+	background-repeat: no-repeat;
+}
+
 a.filter {
-	
+	border: none;
+	padding: 0 .6em;
+	margin: 0 .1em;
+	background: tint($secondary-color, 50%);
+	font-weight: bold;
+
+	.no-touch-device &:hover {
+		background: tint($secondary-color, 70%);
+	}
+
+	&.active {
+		background-color: $accent-color;
+		color: white !important;
+
+		&:hover {
+			background: tint($accent-color, 30%);
+		}
+	}
+}
+
+#headlink-right a.active,
+.modal .message,
+.alert .message {
+	background-color: $accent-color;
+	color: white !important;
+}
+
+.blurb,
+.search-container,
+.credit {
+	background: tint($secondary-color, 90%);
+}
+
+.collapsible-title {
+	background: tint($accent-color, 90%);
+	border: none;
+	border-radius: .2em;
+	padding: .3em;
+	color: $accent-color;
+	font-size: 180%;
+}
+
+.arrow {
+	width: 1.2rem;
+	height: 1.2rem;
+	margin-right: .2em;
+	mix-blend-mode: multiply;
+}
+
+.arrow-down {
+
+}
+
+div.timeline div {
+	background: tint($secondary-color, 70%);
 }

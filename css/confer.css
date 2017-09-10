@@ -28,4 +28,60 @@ h1, h2, h3, h4, h5, h6 {
       border-radius: .3em;
       font-size: 1rem; }
 
+#header {
+  background: rgba(71, 112, 133, 0.8); }
+
+.button {
+  border: none;
+  font-weight: bold;
+  background: #c9dee8; }
+  .button:hover {
+    background: #a6c8d9; }
+
+a#logo {
+  background: url(../logo.svg) 4em 50%/auto 1em, url(../wordmark.svg) 0em 50%/auto 0.8em;
+  background-repeat: no-repeat; }
+
+a.filter {
+  border: none;
+  padding: 0 .6em;
+  margin: 0 .1em;
+  background: #a6c8d9;
+  font-weight: bold; }
+  .no-touch-device a.filter:hover {
+    background: #c9dee8; }
+  a.filter.active {
+    background-color: #ff2b00;
+    color: white !important; }
+    a.filter.active:hover {
+      background: #ff6a4d; }
+
+#headlink-right a.active,
+.modal .message,
+.alert .message {
+  background-color: #ff2b00;
+  color: white !important; }
+
+.blurb,
+.search-container,
+.credit {
+  background: #edf4f7; }
+
+.collapsible-title {
+  background: #ffeae6;
+  border: none;
+  border-radius: .2em;
+  padding: .3em;
+  color: #ff2b00;
+  font-size: 180%; }
+
+.arrow {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: .2em;
+  mix-blend-mode: multiply; }
+
+div.timeline div {
+  background: #c9dee8; }
+
 /*# sourceMappingURL=confer.css.map */
