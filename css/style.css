@@ -16,16 +16,7 @@ body > main > section > section h2, body > main > section > section section h1, 
   font-family: "UIST2017 Icons";
   src: url(../fonts/uist2017-icons.woff); }
 
-* {
-  margin: 0; }
-
 body {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: column;
-  flex-flow: column;
-  -ms-flex-pack: stretch;
-  justify-content: stretch;
   margin: 0;
   min-height: 100vh;
   background: white;
@@ -49,6 +40,17 @@ h1, h2, h3, h4, h5, h6 {
       background: #edf4f7;
       border-radius: .3em;
       font-size: 1rem; }
+
+* {
+  margin: 0; }
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -ms-flex-pack: stretch;
+  justify-content: stretch; }
 
 a {
   text-decoration: none;

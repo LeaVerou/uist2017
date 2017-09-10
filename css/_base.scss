@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700|Lato:300,400,700,900&subset=latin-ext');
+
+$body-font: Lato, Helvetica Neue, sans-serif;
+$heading-font: Arvo, serif;
+$icon-font: "UIST2017 Icons", emoji;
+
+$accent-color: hsl(10, 100%, 50%);
+$secondary-color: hsl(200, 40%, 50%);
+
+// Add percentage of white to a color
+@function tint($color, $percent){
+	@return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent){
+	@return mix(black, $color, $percent);
+}
+
+@mixin icon {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font: 100%/1 $icon-font;
+}
+
+%inline-heading {
+	float: left;
+	padding: .3em .5em;
+	border-radius: .3em;
+	margin: 0 .4em 0 0;
+	background: $accent-color;
+	color: white;
+	font: bold 80%/1.2 $body-font;
+	text-transform: uppercase;
+
+	a {
+		color: inherit;
+	}
+}
+
+@font-face {
+	font-family: "UIST2017 Icons";
+	src: url(../fonts/uist2017-icons.woff);
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	background: white;
+	font: 300 100%/1.5 $body-font;
+	text-decoration-skip: ink;
+	font-kerning: normal;
+	font-synthesis: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: .5em 0;
+	font-family: $heading-font;
+	font-weight: normal;
+	line-height: 1.2;
+
+	& > a {
+		font-weight: inherit;
+
+		&.button {
+			display: inline-block;
+			vertical-align: .3em;
+			padding: .3em .5em;
+			background: tint($secondary-color, 90%);
+			border-radius: .3em;
+			font-size: 1rem;
+		}
+	}
+}
