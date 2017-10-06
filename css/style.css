@@ -365,7 +365,8 @@ body > footer {
       font-size: 50%; }
     #sponsors .sponsor span {
       font-size: 300%;
-      font-weight: 100; }
+      font-weight: 100;
+      text-align: center; }
 
 #registration .centered {
   text-align: center; }
