@@ -394,6 +394,7 @@ body > footer {
 	hyphens: auto;
 	display: flex;
 	flex-flow: column;
+	margin-bottom: 0;
 
 	p {
 		margin: 0;
@@ -414,6 +415,29 @@ body > footer {
 
 	@media (max-width: 401px) {
 
+	}
+}
+
+#video .embed-container {
+	position: relative;
+	border-radius: .3em;
+	overflow: hidden;
+	transition: .2s box-shadow;
+	box-shadow: 0 0 0 100vmax transparent;
+
+	@mixin hover() {
+		box-shadow: 0 0 0 100vmax rgba(0,0,0,.8);
+		transition-duration: 1s;
+		transition-delay: .5s;
+	}
+
+	&:hover,
+	&.playing {
+		@include hover;
+	}
+
+	&:focus-within {
+		@include hover;
 	}
 }
 
@@ -998,6 +1022,8 @@ section.organizers {
 .embed-container {
 	position: relative;
 	padding-bottom: 56.25%;
+	--aspect-ratio: calc(var(--height) / var(--width) * 100%);
+	padding-bottom: var(--aspect-ratio, 56.25%);
 	height: 0;
 	overflow: hidden;
 	max-width: 100%;

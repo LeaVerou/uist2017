@@ -315,7 +315,8 @@ body > footer {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: column;
-  flex-flow: column; }
+  flex-flow: column;
+  margin-bottom: 0; }
   #welcome p {
     margin: 0; }
   #welcome strong, #welcome a {
@@ -325,6 +326,21 @@ body > footer {
       font-size: 125%;
       -ms-flex-flow: row;
       flex-flow: row; } }
+
+#video .embed-container {
+  position: relative;
+  border-radius: .3em;
+  overflow: hidden;
+  transition: .2s box-shadow;
+  box-shadow: 0 0 0 100vmax transparent; }
+  #video .embed-container:hover, #video .embed-container.playing {
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.8);
+    transition-duration: 1s;
+    transition-delay: .5s; }
+  #video .embed-container:focus-within {
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.8);
+    transition-duration: 1s;
+    transition-delay: .5s; }
 
 #sponsors {
   display: -ms-flexbox;
@@ -747,6 +763,8 @@ section.organizers {
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;
+  --aspect-ratio: calc(var(--height) / var(--width) * 100%);
+  padding-bottom: var(--aspect-ratio, 56.25%);
   height: 0;
   overflow: hidden;
   max-width: 100%; }
