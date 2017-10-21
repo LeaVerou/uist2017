@@ -148,6 +148,7 @@ body > header {
 
 		ul {
 			display: flex;
+			flex-flow: row wrap;
 			padding: 0;
 			list-style: none;
 		}
@@ -446,7 +447,8 @@ body > footer {
 	flex-wrap: wrap;
 	align-items: baseline;
 	justify-content: center;
-	max-width: 70em;
+	width: 70em;
+	max-width: 100%;
 
 	.sponsor {
 		display: flex;

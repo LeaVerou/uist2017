@@ -146,6 +146,8 @@ body > header {
     body > header nav ul {
       display: -ms-flexbox;
       display: flex;
+      -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
       padding: 0;
       list-style: none; }
     body > header nav li {
@@ -351,7 +353,8 @@ body > footer {
   align-items: baseline;
   -ms-flex-pack: center;
   justify-content: center;
-  max-width: 70em; }
+  width: 70em;
+  max-width: 100%; }
   #sponsors .sponsor {
     display: -ms-flexbox;
     display: flex;
