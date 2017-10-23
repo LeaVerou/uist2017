@@ -527,20 +527,31 @@ table#sponsorship-levels {
     background: #f7f7f7; }
 
 @media (min-width: 750px) {
-  #organizers {
+  #organizers,
+  [mv-app="attendees"] {
     -moz-columns: 2;
     columns: 2; }
-    #organizers > h1 {
+    #organizers > h1,
+    [mv-app="attendees"] > h1 {
       -moz-column-span: all;
       column-span: all; } }
 
 @media (min-width: 1600px) {
-  #organizers {
+  #organizers,
+  [mv-app="attendees"] {
     -moz-columns: 3;
     columns: 3; } }
 
+#organizers .mv-bar.mv-ui,
+#organizers > p,
+[mv-app="attendees"] .mv-bar.mv-ui,
+[mv-app="attendees"] > p {
+  -moz-column-span: all;
+  column-span: all; }
+
 #organizers > section,
-section.organizers {
+section.organizers,
+[property="attendee"] {
   page-break-inside: avoid;
   break-inside: avoid;
   display: inline-block;
@@ -552,11 +563,13 @@ section.organizers {
   border: 0.1em solid #d2e3ec;
   background: #e6f0f4; }
   #organizers > section > h1,
-  section.organizers > h1 {
+  section.organizers > h1,
+  [property="attendee"] > h1 {
     margin-bottom: .0em;
     font-size: 120%; }
   #organizers > section a[href^=mailto],
-  section.organizers a[href^=mailto] {
+  section.organizers a[href^=mailto],
+  [property="attendee"] a[href^=mailto] {
     display: block;
     margin-bottom: .8em;
     font-weight: 400;
@@ -568,7 +581,8 @@ section.organizers {
   66.6% {
     transform: rotate(-10deg); } }
     #organizers > section a[href^=mailto]::before,
-    section.organizers a[href^=mailto]::before {
+    section.organizers a[href^=mailto]::before,
+    [property="attendee"] a[href^=mailto]::before {
       content: "✉";
       display: inline-block;
       margin-right: .4em;
@@ -578,23 +592,28 @@ section.organizers {
       color: #ff2b00;
       animation: wobble .5s infinite paused; }
     #organizers > section a[href^=mailto]:hover::before,
-    section.organizers a[href^=mailto]:hover::before {
+    section.organizers a[href^=mailto]:hover::before,
+    [property="attendee"] a[href^=mailto]:hover::before {
       animation-play-state: running;
       color: #4d91b3; }
   #organizers > section article,
-  section.organizers article {
+  section.organizers article,
+  [property="attendee"] article {
     margin: .5em 0;
     clear: both; }
     #organizers > section article h1,
-    section.organizers article h1 {
+    section.organizers article h1,
+    [property="attendee"] article h1 {
       margin: 0;
       font-weight: bold;
       font-size: 120%; }
     #organizers > section article > a,
-    section.organizers article > a {
+    section.organizers article > a,
+    [property="attendee"] article > a {
       font-weight: 300; }
     #organizers > section article img,
-    section.organizers article img {
+    section.organizers article img,
+    [property="attendee"] article img {
       float: left;
       width: 3em;
       height: 3em;

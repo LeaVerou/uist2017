@@ -723,7 +723,8 @@ table#sponsorship-levels {
 	}
 }
 
-#organizers {
+#organizers,
+[mv-app="attendees"] {
 	@media (min-width: 750px) {
 		columns: 2;
 
@@ -735,10 +736,16 @@ table#sponsorship-levels {
 	@media (min-width: 1600px) {
 		columns: 3;
 	}
+
+	.mv-bar.mv-ui,
+	& > p {
+		column-span: all;
+	}
 }
 
 #organizers > section,
-section.organizers {
+section.organizers,
+[property="attendee"] {
 	break-inside: avoid; // for the future
 	display: inline-block;  // workaround for lack
 	width: 100%;            // of break-inside support
