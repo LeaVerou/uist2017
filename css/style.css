@@ -809,4 +809,10 @@ iframe {
 .page-schedule > footer {
   display: none; }
 
+#photostream p {
+  margin-bottom: 1em; }
+
+#photostream footer {
+  color: gray; }
+
 /*# sourceMappingURL=style.css.map */
