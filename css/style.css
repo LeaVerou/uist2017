@@ -809,10 +809,35 @@ iframe {
 .page-schedule > footer {
   display: none; }
 
-#photostream p {
-  margin-bottom: 1em; }
-
-#photostream footer {
+#flickrembed + small {
+  display: block;
+  text-align: center;
+  margin: 1em auto 0;
   color: gray; }
+
+@media (min-width: 750px) {
+  #awards {
+    -moz-columns: 2;
+    columns: 2; }
+    #awards h1 {
+      -moz-column-span: all;
+      column-span: all; } }
+
+#awards h1 {
+  margin-bottom: .75em; }
+
+#awards h2:first-of-type {
+  margin-top: 0; }
+
+#awards em {
+  color: gray; }
+
+#awards h3 {
+  margin-top: 2em;
+  font-family: Lato, Helvetica Neue, sans-serif;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ff2b00; }
 
 /*# sourceMappingURL=style.css.map */

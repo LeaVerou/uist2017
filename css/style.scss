@@ -413,10 +413,6 @@ body > footer {
 		font-size: 125%;
 		flex-flow: row;
 	}
-
-	@media (max-width: 401px) {
-
-	}
 }
 
 #video .embed-container {
@@ -1062,12 +1058,42 @@ iframe {
 	}
 }
 
-#photostream {
-	p {
-		margin-bottom: 1em;
+#flickrembed {
+	& + small {
+		display: block;
+		text-align: center;
+		margin: 1em auto 0;
+		color: gray;
+	}
+}
+
+#awards {
+	@media (min-width: 750px) {
+		columns: 2;
+
+		h1 {
+			column-span: all;
+		}
 	}
 
-	footer {
+	h1 {
+		margin-bottom: .75em;
+	}
+
+	h2:first-of-type {
+		margin-top: 0;
+	}
+
+	em {
 		color: gray;
+	}
+
+	h3 {
+		margin-top: 2em;
+		font-family: $body-font;
+		font-size: 80%;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $accent-color;
 	}
 }

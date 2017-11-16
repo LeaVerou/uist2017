@@ -52,8 +52,8 @@ $$("main section > h1").forEach(function (h1) {
 
 	if (!section.id) {
 		var parentSection = section.parentNode.closest("section");
-
-		section.id = (parentSection? parentSection.id + "-" : "") + title.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
+		var id = title.toLowerCase().replace(/[^\w\s-]+/g, "").trim().replace(/\s+/g, "-");
+		section.id = (parentSection? parentSection.id + "-" : "") + id;
 	}
 
 	h1.innerHTML = "";
