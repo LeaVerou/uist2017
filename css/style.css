@@ -816,12 +816,12 @@ iframe {
   color: gray; }
 
 @media (min-width: 750px) {
-  #awards {
+  #awards #non-paper {
     -moz-columns: 2;
-    columns: 2; }
-    #awards h1 {
-      -moz-column-span: all;
-      column-span: all; } }
+    columns: 2; } }
+
+#awards > article {
+  margin-bottom: 1em; }
 
 #awards h1 {
   margin-bottom: .75em; }
@@ -833,11 +833,74 @@ iframe {
   color: gray; }
 
 #awards h3 {
-  margin-top: 2em;
   font-family: Lato, Helvetica Neue, sans-serif;
   font-size: 80%;
   font-weight: bold;
   text-transform: uppercase;
   color: #ff2b00; }
+  #awards h3:not(:first-child) {
+    margin-top: 2em; }
+
+#awards figcaption {
+  font-size: 75%; }
+
+#awards figure {
+  position: relative; }
+  #awards figure figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: .5em;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-weight: bold; }
+
+#awards #best-papers {
+  margin-bottom: 2em; }
+  @media (min-width: 700px) {
+    #awards #best-papers > div {
+      display: -ms-flexbox;
+      display: flex; } }
+  #awards #best-papers > div > article {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    -ms-flex: 1;
+    flex: 1; }
+    #awards #best-papers > div > article + article {
+      margin-left: 1em; }
+    #awards #best-papers > div > article figure {
+      width: 100%;
+      margin-right: .5em; }
+    #awards #best-papers > div > article > div {
+      -ms-flex: 1;
+      flex: 1; }
+
+#awards #lasting-impact {
+  margin-bottom: 2em; }
+  @media (min-width: 700px) {
+    #awards #lasting-impact {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -ms-flex-align: start;
+      align-items: flex-start; }
+      #awards #lasting-impact figure {
+        max-width: calc(33% - .5em);
+        margin-right: 1em; } }
+  #awards #lasting-impact h2 {
+    width: 100%; }
+  #awards #lasting-impact > div {
+    -ms-flex: 1;
+    flex: 1; }
+    @media (min-width: 1600px) {
+      #awards #lasting-impact > div {
+        font-size: 120%; } }
+    @media (min-width: 1600px) {
+      #awards #lasting-impact > div {
+        font-size: 145%; } }
 
 /*# sourceMappingURL=style.css.map */

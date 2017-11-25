@@ -1068,12 +1068,14 @@ iframe {
 }
 
 #awards {
-	@media (min-width: 750px) {
-		columns: 2;
-
-		h1 {
-			column-span: all;
+	#non-paper {
+		@media (min-width: 750px) {
+			columns: 2;
 		}
+	}
+
+	& > article {
+		margin-bottom: 1em;
 	}
 
 	h1 {
@@ -1089,11 +1091,91 @@ iframe {
 	}
 
 	h3 {
-		margin-top: 2em;
 		font-family: $body-font;
 		font-size: 80%;
 		font-weight: bold;
 		text-transform: uppercase;
 		color: $accent-color;
+
+		&:not(:first-child) {
+			margin-top: 2em;
+		}
+	}
+
+	figcaption {
+		font-size: 75%;
+	}
+
+	figure {
+		position: relative;
+
+		figcaption {
+			position: absolute;
+			left: 0; right: 0; bottom: 0;
+			padding: .5em;
+			background: rgba(0,0,0,.75);
+			color: white;
+			font-weight: bold;
+		}
+	}
+
+	#best-papers {
+		margin-bottom: 2em;
+
+		& > div {
+			@media (min-width: 700px) {
+				display: flex;
+			}
+
+			& > article {
+				display: flex;
+				flex-flow: column;
+				flex: 1;
+
+				& + article {
+					margin-left: 1em;
+				}
+
+				figure {
+					width: 100%;
+					margin-right: .5em;
+				}
+
+				& > div {
+					flex: 1;
+				}
+			}
+		}
+	}
+
+	#lasting-impact {
+		margin-bottom: 2em;
+
+		@media (min-width: 700px) {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+
+			figure {
+				max-width: calc(33% - .5em);
+				margin-right: 1em;
+			}
+		}
+
+		h2 {
+			width: 100%;
+		}
+
+		& > div {
+			flex: 1;
+
+			@media (min-width: 1600px) {
+				font-size: 120%;
+			}
+
+			@media (min-width: 1600px) {
+				font-size: 145%;
+			}
+		}
 	}
 }
