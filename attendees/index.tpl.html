@@ -1,0 +1,25 @@
+@@include("_head.html", {
+	"title": "Attendee Directory | UIST 2017",
+	"compact": true
+})
+
+<h1>Attendee Directory</h1>
+
+<div mv-app="attendees" mv-storage="https://github.com/leaverou/uist2017/attendees.csv" mv-bar="no-login">
+	<p>Note that this list only includes attendees that have explicitly opted in to be listed.
+		Notice a mistake with your info? <a href="?login" class="mv-login">Click here to log in via Github</a>, edit, save, then click "Send Edit Suggestion"!</p>
+
+	<article property="attendee" mv-multiple>
+		<h2>
+			<span property="firstName">Name</span>
+			<span property="lastName">Last Name</span>
+		</h2>
+		<p property="company">Affiliation</p>
+		<a property="social" href="[if(starts(social, '@'), 'https://twitter.com/' & social, social)]" mv-attribute="none">Social</a>
+	</article>
+</div>
+
+<script src="https://get.mavo.io/mavo.es5.js"></script>
+<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+
+@@include('_footer.html')

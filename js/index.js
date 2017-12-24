@@ -52,8 +52,8 @@ $$("main section > h1").forEach(function (h1) {
 
 	if (!section.id) {
 		var parentSection = section.parentNode.closest("section");
-
-		section.id = (parentSection? parentSection.id + "-" : "") + title.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
+		var id = title.toLowerCase().replace(/[^\w\s-]+/g, "").trim().replace(/\s+/g, "-");
+		section.id = (parentSection? parentSection.id + "-" : "") + id;
 	}
 
 	h1.innerHTML = "";
@@ -89,3 +89,42 @@ function highlightCurrentItem() {
 
 highlightCurrentItem();
 addEventListener("hashchange", highlightCurrentItem);
+
+// Make Youtube embeds responsive
+(function(){
+	var iframes = $$('iframe[src^="https://www.youtube.com/embed/"]');
+
+	iframes.forEach(function(iframe, i) {
+		var width = iframe.width || 560;
+		var height = iframe.height || 325;
+		var div = $.create("div", {
+			className: "embed-container",
+			style: {
+				"--width": width,
+				"--height": height
+			},
+			around: iframe
+		});
+
+		iframe.id = "youtube-" + (i + 1);
+	});
+
+	if (iframes.length) {
+		$.include(self.YT, "https://www.youtube.com/iframe_api");
+	}
+
+	window.onYouTubeIframeAPIReady = function() {
+		iframes.forEach(function(iframe, i) {
+			new YT.Player("youtube-" + (i + 1), {
+				events: {
+					onStateChange: function(evt) {
+						if (evt.data <= YT.PlayerState.PAUSED) {
+							iframe.parentNode.classList.toggle("playing", evt.data == YT.PlayerState.PLAYING);
+							console.log(iframe.parentNode, evt.data == YT.PlayerState.PLAYING);
+						}
+					}
+				}
+			})
+		});
+	}
+})();

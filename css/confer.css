@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Arvo:400,700|Lato:300,400,700,900&subset=latin-ext");
+@font-face {
+  font-family: "UIST2017 Icons";
+  src: url(../fonts/uist2017-icons.woff); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: white;
+  font: 300 100%/1.5 Lato, Helvetica Neue, sans-serif;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+  font-kerning: normal;
+  font-synthesis: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: .5em 0;
+  font-family: Arvo, serif;
+  font-weight: normal;
+  line-height: 1.2; }
+  h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+    font-weight: inherit; }
+    h1 > a.button, h2 > a.button, h3 > a.button, h4 > a.button, h5 > a.button, h6 > a.button {
+      display: inline-block;
+      vertical-align: .3em;
+      padding: .3em .5em;
+      background: #edf4f7;
+      border-radius: .3em;
+      font-size: 1rem; }
+
+#header {
+  background: rgba(71, 112, 133, 0.8); }
+
+.button {
+  border: none;
+  font-weight: bold;
+  background: #c9dee8; }
+  .button:hover {
+    background: #a6c8d9; }
+
+a#logo {
+  background: url(../logo.svg) 4em 50%/auto 1em, url(../wordmark.svg) 0em 50%/auto 0.8em;
+  background-repeat: no-repeat; }
+
+a.filter {
+  border: none;
+  padding: 0 .6em;
+  margin: 0 .1em;
+  background: #a6c8d9;
+  font-weight: bold; }
+  .no-touch-device a.filter:hover {
+    background: #c9dee8; }
+  a.filter.active {
+    background-color: #ff2b00;
+    color: white !important; }
+    a.filter.active:hover {
+      background: #ff6a4d; }
+
+#headlink-right a.active,
+.modal .message,
+.alert .message {
+  background-color: #ff2b00;
+  color: white !important; }
+
+.blurb,
+.search-container,
+.credit {
+  background: #edf4f7; }
+
+.collapsible-title {
+  background: #ffeae6;
+  border: none;
+  border-radius: .2em;
+  padding: .3em;
+  color: #ff2b00;
+  font-size: 180%; }
+
+.arrow {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: .2em;
+  mix-blend-mode: multiply; }
+
+div.timeline div {
+  background: #c9dee8; }
+
+/*# sourceMappingURL=confer.css.map */

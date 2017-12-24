@@ -16,23 +16,13 @@ body > main > section > section h2, body > main > section > section section h1, 
   font-family: "UIST2017 Icons";
   src: url(../fonts/uist2017-icons.woff); }
 
-* {
-  margin: 0; }
-
 body {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: column;
-  flex-flow: column;
-  -ms-flex-pack: stretch;
-  justify-content: stretch;
   margin: 0;
   min-height: 100vh;
   background: white;
   font: 300 100%/1.5 Lato, Helvetica Neue, sans-serif;
   -webkit-text-decoration-skip: ink;
   text-decoration-skip: ink;
-  -webkit-font-kerning: normal;
   font-kerning: normal;
   font-synthesis: none; }
 
@@ -43,6 +33,24 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2; }
   h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
     font-weight: inherit; }
+    h1 > a.button, h2 > a.button, h3 > a.button, h4 > a.button, h5 > a.button, h6 > a.button {
+      display: inline-block;
+      vertical-align: .3em;
+      padding: .3em .5em;
+      background: #edf4f7;
+      border-radius: .3em;
+      font-size: 1rem; }
+
+* {
+  margin: 0; }
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -ms-flex-pack: stretch;
+  justify-content: stretch; }
 
 a {
   text-decoration: none;
@@ -138,6 +146,8 @@ body > header {
     body > header nav ul {
       display: -ms-flexbox;
       display: flex;
+      -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
       padding: 0;
       list-style: none; }
     body > header nav li {
@@ -207,6 +217,8 @@ body > main {
     @media (min-width: 500px) {
       body > main > h1 {
         font-size: 450%; } }
+    body > main > h1 a.button {
+      font-size: 1.2rem; }
   body > main section {
     margin: 1.5em 0; }
   body > main > section > section h2, body > main > section > section section h1 {
@@ -305,7 +317,8 @@ body > footer {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: column;
-  flex-flow: column; }
+  flex-flow: column;
+  margin-bottom: 0; }
   #welcome p {
     margin: 0; }
   #welcome strong, #welcome a {
@@ -316,9 +329,32 @@ body > footer {
       -ms-flex-flow: row;
       flex-flow: row; } }
 
+#video .embed-container {
+  position: relative;
+  border-radius: .3em;
+  overflow: hidden;
+  transition: .2s box-shadow;
+  box-shadow: 0 0 0 100vmax transparent; }
+  #video .embed-container:hover, #video .embed-container.playing {
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.8);
+    transition-duration: 1s;
+    transition-delay: .5s; }
+  #video .embed-container:focus-within {
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.8);
+    transition-duration: 1s;
+    transition-delay: .5s; }
+
 #sponsors {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 70em;
+  max-width: 100%; }
   #sponsors .sponsor {
     display: -ms-flexbox;
     display: flex;
@@ -327,8 +363,7 @@ body > footer {
     background: #e4eef4;
     padding: .5em;
     border-radius: .5em;
-    margin: 0;
-    margin-right: 1em; }
+    margin: 0 1em 1em 0; }
     #sponsors .sponsor h1 {
       margin-right: 0;
       background: #a6c8d9;
@@ -337,8 +372,20 @@ body > footer {
       margin: auto; }
     #sponsors .sponsor img {
       display: block;
+      max-width: calc(100% - 2em);
       height: 3em;
-      margin: 1.5em 1em; }
+      margin: 1.5em 1em;
+      object-fit: contain; }
+    #sponsors .sponsor.platinum {
+      font-size: 130%; }
+    #sponsors .sponsor.bronze {
+      font-size: 70%; }
+    #sponsors .sponsor.friends {
+      font-size: 50%; }
+    #sponsors .sponsor span {
+      font-size: 300%;
+      font-weight: 100;
+      text-align: center; }
 
 #registration .centered {
   text-align: center; }
@@ -480,17 +527,32 @@ table#sponsorship-levels {
     background: #f7f7f7; }
 
 @media (min-width: 750px) {
-  #organizers {
+  #organizers,
+  [mv-app="attendees"] {
+    -moz-columns: 2;
     columns: 2; }
-    #organizers > h1 {
+    #organizers > h1,
+    [mv-app="attendees"] > h1 {
+      -moz-column-span: all;
       column-span: all; } }
 
 @media (min-width: 1600px) {
-  #organizers {
+  #organizers,
+  [mv-app="attendees"] {
+    -moz-columns: 3;
     columns: 3; } }
 
+#organizers .mv-bar.mv-ui,
+#organizers > p,
+[mv-app="attendees"] .mv-bar.mv-ui,
+[mv-app="attendees"] > p {
+  -moz-column-span: all;
+  column-span: all; }
+
 #organizers > section,
-section.organizers {
+section.organizers,
+[property="attendee"] {
+  page-break-inside: avoid;
   break-inside: avoid;
   display: inline-block;
   width: 100%;
@@ -501,11 +563,13 @@ section.organizers {
   border: 0.1em solid #d2e3ec;
   background: #e6f0f4; }
   #organizers > section > h1,
-  section.organizers > h1 {
+  section.organizers > h1,
+  [property="attendee"] > h1 {
     margin-bottom: .0em;
     font-size: 120%; }
   #organizers > section a[href^=mailto],
-  section.organizers a[href^=mailto] {
+  section.organizers a[href^=mailto],
+  [property="attendee"] a[href^=mailto] {
     display: block;
     margin-bottom: .8em;
     font-weight: 400;
@@ -517,7 +581,8 @@ section.organizers {
   66.6% {
     transform: rotate(-10deg); } }
     #organizers > section a[href^=mailto]::before,
-    section.organizers a[href^=mailto]::before {
+    section.organizers a[href^=mailto]::before,
+    [property="attendee"] a[href^=mailto]::before {
       content: "✉";
       display: inline-block;
       margin-right: .4em;
@@ -527,23 +592,28 @@ section.organizers {
       color: #ff2b00;
       animation: wobble .5s infinite paused; }
     #organizers > section a[href^=mailto]:hover::before,
-    section.organizers a[href^=mailto]:hover::before {
+    section.organizers a[href^=mailto]:hover::before,
+    [property="attendee"] a[href^=mailto]:hover::before {
       animation-play-state: running;
       color: #4d91b3; }
   #organizers > section article,
-  section.organizers article {
+  section.organizers article,
+  [property="attendee"] article {
     margin: .5em 0;
     clear: both; }
     #organizers > section article h1,
-    section.organizers article h1 {
+    section.organizers article h1,
+    [property="attendee"] article h1 {
       margin: 0;
       font-weight: bold;
       font-size: 120%; }
     #organizers > section article > a,
-    section.organizers article > a {
+    section.organizers article > a,
+    [property="attendee"] article > a {
       font-weight: 300; }
     #organizers > section article img,
-    section.organizers article img {
+    section.organizers article img,
+    [property="attendee"] article img {
       float: left;
       width: 3em;
       height: 3em;
@@ -576,6 +646,7 @@ section.organizers {
       text-decoration: none; }
   @media (min-width: 800px) {
     #toc:not(.compact) {
+      -moz-column-count: 2;
       column-count: 2; } }
   #toc:not(.compact)::before {
     content: "On this page";
@@ -583,14 +654,17 @@ section.organizers {
     font-weight: 900;
     font-size: 150%;
     color: #4d91b3;
+    -moz-column-span: all;
     column-span: all; }
   #toc:not(.compact) a {
     display: block; }
 
 @media (min-width: 550px) {
   #program-committee table {
+    -moz-columns: 2;
     columns: 2; }
   #program-committee thead {
+    -moz-column-span: all;
     column-span: all; } }
 
 #program-committee tr, #program-committee td, #program-committee table, #program-committee thead, #program-committee tbody {
@@ -598,6 +672,7 @@ section.organizers {
 
 #program-committee tr {
   padding: .5em;
+  page-break-inside: avoid;
   break-inside: avoid;
   display: inline-block;
   width: 100%;
@@ -706,5 +781,126 @@ section.organizers {
     #keynote article {
       -ms-flex-preferred-size: 49%;
       flex-basis: 49%; } }
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  --aspect-ratio: calc(var(--height) / var(--width) * 100%);
+  padding-bottom: var(--aspect-ratio, 56.25%);
+  height: 0;
+  overflow: hidden;
+  max-width: 100%; }
+  .embed-container iframe,
+  .embed-container object,
+  .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+iframe {
+  border: 0; }
+
+.page-schedule iframe {
+  -ms-flex: 1;
+  flex: 1; }
+
+.page-schedule > footer {
+  display: none; }
+
+#flickrembed + small {
+  display: block;
+  text-align: center;
+  margin: 1em auto 0;
+  color: gray; }
+
+@media (min-width: 750px) {
+  #awards #non-paper {
+    -moz-columns: 2;
+    columns: 2; } }
+
+#awards > article {
+  margin-bottom: 1em; }
+
+#awards h1 {
+  margin-bottom: .75em; }
+
+#awards h2:first-of-type {
+  margin-top: 0; }
+
+#awards em {
+  color: gray; }
+
+#awards h3 {
+  font-family: Lato, Helvetica Neue, sans-serif;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ff2b00; }
+  #awards h3:not(:first-child) {
+    margin-top: 2em; }
+
+#awards figcaption {
+  font-size: 75%; }
+
+#awards figure {
+  position: relative; }
+  #awards figure figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: .5em;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-weight: bold; }
+
+#awards #best-papers {
+  margin-bottom: 2em; }
+  @media (min-width: 700px) {
+    #awards #best-papers > div {
+      display: -ms-flexbox;
+      display: flex; } }
+  #awards #best-papers > div > article {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    -ms-flex: 1;
+    flex: 1; }
+    #awards #best-papers > div > article + article {
+      margin-left: 1em; }
+    #awards #best-papers > div > article figure {
+      width: 100%;
+      margin-right: .5em; }
+    #awards #best-papers > div > article > div {
+      -ms-flex: 1;
+      flex: 1; }
+
+#awards #lasting-impact {
+  margin-bottom: 2em; }
+  @media (min-width: 700px) {
+    #awards #lasting-impact {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -ms-flex-align: start;
+      align-items: flex-start; }
+      #awards #lasting-impact figure {
+        max-width: calc(33% - .5em);
+        margin-right: 1em; } }
+  #awards #lasting-impact h2 {
+    width: 100%; }
+  #awards #lasting-impact > div {
+    -ms-flex: 1;
+    flex: 1; }
+    @media (min-width: 1600px) {
+      #awards #lasting-impact > div {
+        font-size: 120%; } }
+    @media (min-width: 1600px) {
+      #awards #lasting-impact > div {
+        font-size: 145%; } }
 
 /*# sourceMappingURL=style.css.map */
